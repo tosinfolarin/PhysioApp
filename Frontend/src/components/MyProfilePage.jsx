@@ -1,5 +1,11 @@
+import Navbar from "./Navbar";
+
 const MyProfile = () => {
-    return ( <h1> This is the profile page</h1> );
+    return ( 
+    <div>
+        <Navbar/>
+    <h1> This is the profile page</h1>
+    </div> );
 }
  
 export default MyProfile;
