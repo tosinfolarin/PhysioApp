@@ -1,16 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
+import Slogan from "./SloganText";
 
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (  
-        
+        <div>
         <nav> 
             <Link to="/" className="title"> WaitLess Physio </Link>
             <div className="menu" onClick={() => {
-                setMenuOpen(!menuOpen)
+                setMenuOpen(!menuOpen);
             }}>
                 <span></span>
                 <span></span>
@@ -35,8 +36,11 @@ const Navbar = () => {
             </li>
             </ul>
         </nav>
+       
+            <Slogan/>
+        </div>
     
-        
+    
     );
 }
 

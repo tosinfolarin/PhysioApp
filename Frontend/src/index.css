@@ -1,10 +1,10 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #FBF4ED;
   height: 100%;
   width: 100%;
 }
-
+  
 /* Navbar */ 
 
 .active {
@@ -100,6 +100,31 @@ nav .menu span {
 }
 
 
+
+.aboutme-page {
+  display: flex;
+}
+
+.pic-box {
+  flex: 0 1 30%; /* Adjust flex properties as needed */
+  border: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center items vertically */
+}
+
+.instructor-image {
+  height: 250px;
+  width: 250px;}
+
+
+.flex-c {
+  flex: 1;
+  border: 2px solid rgb(255, 0, 0);
+  margin-left: 20px;
+  padding: 20px;
+}
+
 /* .navbar {
   display: flex;
   justify-content: space-between;
@@ -184,3 +209,42 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+
+
+
+/* Styles for the ScrollArea component */
+.scroll-area {
+  position: relative;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  white-space: nowrap; /* Ensure content stays in a single line */
+  border: 1px solid #e5e7eb; /* Example border */
+  border-radius: 0.375rem; /* Example border radius */
+}
+
+/* Styles for the content inside the ScrollArea */
+.scroll-area .flex {
+  display: flex;
+  padding: 1rem; /* Example padding */
+}
+
+/* Optional: Adjust scrollbar styles */
+.scroll-area::-webkit-scrollbar {
+  width: 8px; /* Example width */
+}
+
+.scroll-area::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Example background color */
+}
+
+.scroll-area::-webkit-scrollbar-thumb {
+  background-color: #888; /* Example thumb color */
+  border-radius: 4px; /* Example border radius */
+}
+
+/* Optional: Adjust scrollbar on hover */
+.scroll-area:hover::-webkit-scrollbar-thumb {
+  background-color: #555; /* Example hover color */
+}
