@@ -1,8 +1,10 @@
 import Navbar from "./Navbar";
 import MyInjury from "./myInjuryButton";
-import RedflagInfo from "./RedflagInfo";
+import RedflagWarning from "./RedflagWarning";
+import RedFlagInfo from "./RedFlagInfo";
 import RedFlags from "./RedFlagsButton";
-import ScrollAreaHorizontalDemo from "./scrollbar";
+import ScrollAreaHorizontalDemo from "./Scrollbar";
+import FAQinfo from "./FAQInfo";
 
 
 
@@ -11,24 +13,16 @@ const Home = () => {
         <div>
         <Navbar/>
         <MyInjury/>
-        <RedflagInfo/>
+        <RedflagWarning/>
+        <RedFlagInfo/>
         <RedFlags/>
 
         <h1>Scroll For Red Flag Information</h1>
       <ScrollAreaHorizontalDemo />
        
     
-       
 
-
-        
-
-
-
-
-
-
-        <h1> FAQs </h1>  
+        <FAQinfo/>
         </div>
         
      );

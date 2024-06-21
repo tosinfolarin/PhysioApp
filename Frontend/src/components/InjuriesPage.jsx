@@ -10,3 +10,4 @@ const Injuries = () => {
 }
  
 export default Injuries;
+

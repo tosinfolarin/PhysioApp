@@ -1,9 +1,12 @@
 const RedFlags = () => {
-    return ( 
-        <button>
-            <h3 className="RedFlags"> Red Flags</h3>
+    return (
+      <div className="container">
+        <button className="button">
+          <h3 className="RedFlags"> Red Flags </h3>
         </button>
-     );
-}
- 
-export default RedFlags;
+      </div>
+    );
+  };
+  
+  export default RedFlags;
+  

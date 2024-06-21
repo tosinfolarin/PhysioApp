@@ -1,11 +1,13 @@
 import Navbar from "./Navbar";
+import FAQs from "./FAQDrop";
 
-const FAQs = () => {
+const FAQ = () => {
     return ( 
         <div>
         <Navbar/>
-        <h1> This is a dropdown of FAQs </h1>
+        <FAQs/>
+      
         </div> );
 }
  
-export default FAQs;
+export default FAQ;
