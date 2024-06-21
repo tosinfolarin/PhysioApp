@@ -1,31 +1,41 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false)
+
     return (  
         
-        <div className="navbar">
-        <nav className="links">
-            <Link to="/" className="Logo"> WaitLess Physio </Link>
-            <ul>
+        <nav> 
+            <Link to="/" className="title"> WaitLess Physio </Link>
+            <div className="menu" onClick={() => {
+                setMenuOpen(!menuOpen)
+            }}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul className={menuOpen ? "open" : ""}>
             <li>
-            <Link to="/"> Home </Link>
+            <NavLink to="/"> Home </NavLink>
             </li>
             <li>
-            <Link to="/Injuries"> Injuries </Link>
+            <NavLink to="/Injuries"> Injuries </NavLink>
             </li>
             <li>
-            <Link to="/FAQs"> FAQs </Link>
+            <NavLink to="/FAQs"> FAQs </NavLink>
             </li>
             <li>
-            <Link to="/MyProfile"> My Profile  </Link>
+            <NavLink to="/MyProfile"> My Profile  </NavLink>
             </li>
             <li>
-            <Link to="/Sign-In"> Sign up/ Sign In </Link>
+            <NavLink to="/Sign-In"> Sign up/ Sign In </NavLink>
             </li>
             </ul>
         </nav>
-    </div>
+    
         
     );
 }
