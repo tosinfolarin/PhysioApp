@@ -4,12 +4,13 @@ import {useState} from "react";
 const FAQs = () => {
 
     const initialDropdowns = [
-        { isOpen: false, question: "Do I need an x-ray or a scan/ Can I have an x-ray or a scan?", answer: "Answer1" },
+        { isOpen: false, question: "Do I need an x-ray or a scan/ Can I have an x-ray or a scan?", answer: "While x-rays and scans can be useful diagnostic tools, they are not always necessary for managing your symptoms initially. Most patients benefit greatly from exercise-based rehabilitation and physical therapy. If there is no improvement with these treatments, imaging can then help guide the next steps of your care." },
         { isOpen: false, question: "How long would this take to get better?", answer: "Answer2" },
         { isOpen: false, question: "Can I have a pain killing injection?", answer: "Answer3" },
         { isOpen: false, question: "Is Ice or Heat better for my injury?", answer: "Answer 4." },
         { isOpen: false, question: "How many times a day should I do the exercises?", answer: "Answer5" },
-        { isOpen: false, question: "Question6", answer: "Answer6" },
+        { isOpen: false, question: "Can I continue my regular activities and sports?", answer: "Answer6" },
+        { isOpen: false, question: "What should I do if my pain worsens?", answer: "Answer7" },
 
     ];
 
