@@ -1,13 +1,16 @@
+import Help from "./InjuryTag";
 import Navbar from "./Navbar";
+import Injuries from "./InjuryList";
 
-const Injuries = () => {
+const InjuryPage = () => {
     return ( 
         <div>
             <Navbar/>
-            <h1>This is the list of injuries page</h1>
+            <Help/>
+            <Injuries/>
         </div>
     );
 }
  
-export default Injuries;
+export default InjuryPage;
 

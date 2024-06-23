@@ -4,11 +4,11 @@ import {useState} from "react";
 const FAQs = () => {
 
     const initialDropdowns = [
-        { isOpen: false, question: "Question1", answer: "Answer1" },
-        { isOpen: false, question: "Question2?", answer: "Answer2" },
-        { isOpen: false, question: "Question3", answer: "Answer3" },
-        { isOpen: false, question: "Question4", answer: "Answer 4." },
-        { isOpen: false, question: "Question 5", answer: "Answer5" },
+        { isOpen: false, question: "Do I need an x-ray or a scan/ Can I have an x-ray or a scan?", answer: "Answer1" },
+        { isOpen: false, question: "How long would this take to get better?", answer: "Answer2" },
+        { isOpen: false, question: "Can I have a pain killing injection?", answer: "Answer3" },
+        { isOpen: false, question: "Is Ice or Heat better for my injury?", answer: "Answer 4." },
+        { isOpen: false, question: "How many times a day should I do the exercises?", answer: "Answer5" },
         { isOpen: false, question: "Question6", answer: "Answer6" },
 
     ];

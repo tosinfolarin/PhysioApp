@@ -340,7 +340,106 @@ button:focus-visible {
 }
 
 
+/* Injuries Page Styling */
 
+  .help-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 10vh; /* Full viewport height */
+  }
+  
+  .help-tag {
+    font-size: 2rem; /* Example font size, adjust as needed */
+    background-color: #D9D9D9; /* Background color for the text */
+    padding: 10px 100px; /* Padding around the text */
+    
+  }
+
+
+
+  .injuries {
+    display: flex;
+    padding-top: 30px;
+    gap: 50px; /* Adds spacing between items */
+  }
+  
+  .injury-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    margin-bottom: 50px; /* Adds vertical spacing between rows */
+  }
+  
+  .injury-text-container {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    width: 280px;
+    height: 280px;
+    border-radius: 10px;
+    border: 1px solid transparent; /* Transparent border */
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .injury-text {
+    font-size: 1.25rem; /* Example font size, adjust as needed */
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .all-injuries {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  
+    .injuries {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .injury-item {
+      width: 80%;
+      margin-bottom: 20px; /* Adjust spacing for smaller screens */
+    }
+  
+    .injury-text-container {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media only screen and (min-width: 769px) and (max-width: 991px) {
+    .injuries {
+      justify-content: center;
+      gap: 40px;
+    }
+  
+    .injury-item {
+      width: 45%;
+      margin-bottom: 40px; /* Adjust spacing for medium screens */
+    }
+  }
+  
+  @media only screen and (min-width: 992px) {
+    .all-injuries {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  
+    .injuries {
+      justify-content: center;
+      gap: 50px;
+    }
+  
+    .injury-item {
+      width: 350px;
+      margin-bottom: 50px; /* Maintain spacing for larger screens */
+    }
+  }
+  
 
 
 
