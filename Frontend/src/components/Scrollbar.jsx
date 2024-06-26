@@ -11,7 +11,7 @@ const works = [
     art: 'https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80',
   },
   {
-    artist: 'Shoulders',
+    artist: 'Shoulder',
     art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
   },
   {

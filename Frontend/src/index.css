@@ -274,8 +274,17 @@ button:focus-visible {
 
 /* Optional: Adjust scrollbar on hover */
 .scroll-area:hover::-webkit-scrollbar-thumb {
-  background-color: #555; /* Example hover color */
+  background-color: #000000; /* Example hover color */
 }
+
+
+
+
+
+
+
+
+
 
 
 
