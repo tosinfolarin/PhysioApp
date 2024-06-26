@@ -651,3 +651,79 @@ button:focus-visible {
   border-radius: 4px;
   resize: vertical;
 }
+
+
+
+
+/* Signing up/ Signing in */
+
+.SignUp {
+  background-color: #8babf7;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: center; 
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.SignUp h1 {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.SignUp input[type="radio"] {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.SignUp label {
+  display: inline-block;
+  margin: 8px; /* Adjusts spacing between labels */
+  color: white;
+}
+
+.SignUp input[type="text"],
+.SignUp input[type="number"],
+.SignUp input[type="email"] {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.SignUp input[type="submit"] {
+  background-color: #000000;
+  color: white;
+  margin-top: 5%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.SignUp input[type="submit"]:hover {
+  transition: 1s;
+  background-color: #000000;
+}
+
+.errorMessage {
+  color: rgb(255, 204, 204);
+  font-size: 14px;
+}
+
+.sign-in-option {
+  color: #000000;
+}
+
+.thank-you-message {
+  display: flex;
+  justify-content: center;
+}

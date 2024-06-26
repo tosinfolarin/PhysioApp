@@ -12,6 +12,7 @@
   "dependencies": {
     "@eslint/config-array": "^0.16.0",
     "@eslint/object-schema": "^2.1.4",
+    "@hookform/resolvers": "^3.6.0",
     "@radix-ui/react-scroll-area": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -23,7 +24,8 @@
     "react-router-dom": "^6.23.1",
     "rimraf": "^5.0.7",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.14.7",

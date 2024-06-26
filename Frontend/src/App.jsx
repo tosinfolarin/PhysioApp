@@ -4,7 +4,7 @@ import Home from './components/Homepage';
 import Injuries from './components/InjuriesPage';
 import FAQs from './components/FAQPage';
 import MyProfile from './components/MyProfilePage';
-import SigningIn from './components/SigningInPage';
+import SignIn from './components/SigningInPage';
 import SignUp from './components/SignUpPage';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Route path="/injuries" element={<Injuries/>} />
         <Route path="/FAQs" element={<FAQs/>} />
         <Route path="/MyProfile" element={<MyProfile/>} />
-        <Route path="/Sign-In" element={<SigningIn/>} />
+        <Route path="/Sign-In" element={<SignIn/>} />
         <Route path="/Sign-Up" element={<SignUp/>} />
         
       </Routes>

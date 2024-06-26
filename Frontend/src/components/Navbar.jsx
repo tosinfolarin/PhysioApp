@@ -23,7 +23,7 @@ const Navbar = () => {
             <NavLink to="/"> Home </NavLink>
             </li>
             <li>
-            <NavLink to="/Injuries"> Injuries </NavLink>
+            <NavLink to="/Injuries"> Symptoms </NavLink>
             </li>
             <li>
             <NavLink to="/FAQs"> FAQs </NavLink>
@@ -32,7 +32,7 @@ const Navbar = () => {
             <NavLink to="/MyProfile"> My Profile  </NavLink>
             </li>
             <li>
-            <NavLink to="/Sign-In"> Sign up/ Sign In </NavLink>
+            <NavLink to="/Sign-In"> Log In </NavLink>
             </li>
             </ul>
         </nav>

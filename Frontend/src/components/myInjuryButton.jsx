@@ -1,9 +1,13 @@
+import { NavLink } from "react-router-dom";
+
 const MyInjury = () => {
   return (
     <div className="container">
-      <button className="button">
-        <h3 className="myInjury">My Injury</h3>
-      </button>
+      <NavLink to="/Injuries" className="navLink">
+        <button className="button">
+          <h3 className="myInjury"> My Symptoms</h3>
+        </button>
+      </NavLink>
     </div>
   );
 };
