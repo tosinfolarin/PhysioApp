@@ -102,29 +102,7 @@ nav .menu span {
 
 
 
-.aboutme-page {
-  display: flex;
-}
 
-.pic-box {
-  flex: 0 1 30%; /* Adjust flex properties as needed */
-  border: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center items vertically */
-}
-
-.instructor-image {
-  height: 250px;
-  width: 250px;}
-
-
-.flex-c {
-  flex: 1;
-  border: 2px solid rgb(255, 0, 0);
-  margin-left: 20px;
-  padding: 20px;
-}
 
 /* .navbar {
   display: flex;
@@ -214,6 +192,8 @@ button:focus-visible {
 
 
 
+
+
 .container {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -239,6 +219,53 @@ button:focus-visible {
   margin: 0; /* Remove default margin */
 }
 
+
+
+
+
+.red-flag-page {
+  display: flex;
+  width: 83%;
+  margin: 0 auto;
+}
+
+.red-flag-intro {
+  flex: 0 1 40%; /* Adjust flex properties as needed */
+  padding: 20px; /* Increase padding for better spacing */
+  font-size: 14px; /* Adjust font size as needed */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: #0693E3;
+  color: white;
+  text-align: center; /* Center-align text within the div */
+}
+
+
+.instructor-image {
+  height: 250px;
+  width: 250px;}
+
+
+.flex-c {
+  flex: 1;
+  /* border: 2px solid #0056b3; */
+}
+
+.ConsultationPic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.red-flag-info-container {
+  width: 80%; /* Adjust this value to control the width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding for space inside the container */
+  text-align: center; /* Center-align the text */
+  background-color: #C9EAFC; /* Optional: Add a background color */
+
+}
 
 
 
@@ -501,7 +528,7 @@ button:focus-visible {
 }
 
 .dropdown-content.show {
-  max-height: 100px;
+  max-height: 200px;
   max-width: 598px;
   text-align: center;
   justify-content: center;
