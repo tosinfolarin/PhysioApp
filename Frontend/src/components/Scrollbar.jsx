@@ -1,51 +1,56 @@
 import React from 'react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
+import HeadNeck from '../images/HeadNeck.jpg'
+import Myelopathy from '../images/Myelopathy.jpg'
+import CES from '../images/CES.jpg'
+import Fracture from '../images/Fracture.jpg'
+import Cellulitis from '../images/Cellulitis.jpg'
+
 
 const works = [
   {
-    artist: 'Head',
-    art: 'https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80',
+    artist: 'Cervical Artery Disease (CAD)',
+    art: HeadNeck,
   },
   {
-    artist: 'Neck',
+    artist: 'Myelopathy',
+    art: Myelopathy,
+  },
+  {
+    artist: 'Compartment syndrome',
+    art: Fracture,
+  },
+  {
+    artist: 'Cauda Equina Syndrome (CES)',
+    art: CES,
+  },
+  {
+    artist: 'Polymyalgia Rheumatica',
+    art: 'https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80',
+  },
+  
+  {
+    artist: 'Fractures',
+    art: Fracture,
+  },
+  
+  {
+    artist: 'Cancer',
     art: 'https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80',
   },
   {
-    artist: 'Shoulder',
+    artist: 'Deep Vein Thrombosis (DVT)',
     art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
   },
   {
-    artist: 'Elbow',
-    art: 'https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80',
+    artist: 'Cellulitis',
+    art: Cellulitis,
   },
   {
-    artist: 'Wrist/Hand',
-    art: 'https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80',
+    artist: 'Rheumatoid Arthritis',
+    art: 'Frontend/src/images/HeadNeck.jpg',
   },
-  {
-    artist: 'Back',
-    art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    artist: 'Hip',
-    art: 'https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    artist: 'Thigh',
-    art: 'https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    artist: 'Knee',
-    art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    artist: 'Calf',
-    art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
-  },
-  {
-    artist: 'Ankle/Foot',
-    art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
-  },
+
 ];
 
 const ScrollAreaHorizontalDemo = () => {
@@ -81,5 +86,7 @@ const ScrollAreaHorizontalDemo = () => {
     </ScrollArea>
   );
 };
+
+
 
 export default ScrollAreaHorizontalDemo;
