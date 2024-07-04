@@ -30,6 +30,20 @@ import KneeExercises3 from './components/KneeEx3';
 import CalfExercises from './components/CalfEx1';
 import CalfExercises2 from './components/CalfEx2';
 import CalfExercises3 from './components/CalfEx3';
+import AnkleExercises from './components/AnkleEx1';
+import AnkleExercises2 from './components/AnkleEx2';
+import AnkleExercises3 from './components/AnkleEx3';
+import FootExercises from './components/FootEx1';
+import FootExercises2 from './components/FootEx2';
+import FootExercises3 from './components/FootEx3';
+import LowerExercises from './components/LowerEx1';
+import LowerExercises2 from './components/LowerEx2';
+import LowerExercises3 from './components/LowerEx3';
+import UpperExercises from './components/UpperEx1';
+import UpperExercises2 from './components/UpperEx2';
+import UpperExercises3 from './components/UpperEx3';
+
+
 
 
 
@@ -72,6 +86,20 @@ function App() {
         <Route path="/calf-pain" element={<CalfExercises/>}/>
         <Route path="/calf-pain/level-2" element={<CalfExercises2/>}/>
         <Route path="/calf-pain/level-3" element={<CalfExercises3/>}/>
+        <Route path="/ankle-pain" element={<AnkleExercises/>}/>
+        <Route path="/ankle-pain/level-2" element={<AnkleExercises2/>}/>
+        <Route path="/ankle-pain/level-3" element={<AnkleExercises3/>}/>
+        <Route path="/foot-pain" element={<FootExercises/>}/>
+        <Route path="/foot-pain/level-2" element={<FootExercises2/>}/>
+        <Route path="/foot-pain/level-3" element={<FootExercises3/>}/>
+        <Route path="/lower-limb-paresthesia" element={<LowerExercises/>}/>
+        <Route path="/lower-limb-paresthesia/level-2" element={<LowerExercises2/>}/>
+        <Route path="/lower-limb-paresthesia/level-3" element={<LowerExercises3/>}/>
+        <Route path="/upper-limb-paresthesia" element={<UpperExercises/>}/>
+        <Route path="/upper-limb-paresthesia/level-2" element={<UpperExercises2/>}/>
+        <Route path="/upper-limb-paresthesia/level-3" element={<UpperExercises3/>}/>
+
+
         
         
        
