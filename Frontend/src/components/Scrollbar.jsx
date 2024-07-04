@@ -1,54 +1,60 @@
 import React from 'react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-import HeadNeck from '../images/HeadNeck.jpg'
+import CAD from '../images/CAD.jpg'
 import Myelopathy from '../images/Myelopathy.jpg'
 import CES from '../images/CES.jpg'
+import pmr from '../images/pmr.jpg'
+import compartment from '../images/compartment.jpg'
 import Fracture from '../images/Fracture.jpg'
+import cancer from '../images/cancer.jpg'
+import DVT from '../images/DVT.jpg'
 import Cellulitis from '../images/Cellulitis.jpg'
+import rheumatism from '../images/rheum.jpg'
 
 
-const works = [
+
+const FlagImages = [
   {
-    artist: 'Cervical Artery Disease (CAD)',
-    art: HeadNeck,
+    name: 'Cervical Artery Disease (CAD)',
+    pic: CAD,
   },
   {
-    artist: 'Myelopathy',
-    art: Myelopathy,
+    name: 'Myelopathy',
+    pic: Myelopathy,
   },
   {
-    artist: 'Compartment syndrome',
-    art: Fracture,
+    name: 'Compartment syndrome',
+    pic: compartment,
   },
   {
-    artist: 'Cauda Equina Syndrome (CES)',
-    art: CES,
+    name: 'Cauda Equina Syndrome (CES)',
+    pic: CES,
   },
   {
-    artist: 'Polymyalgia Rheumatica',
-    art: 'https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80',
+    name: 'Polymyalgia Rheumatica',
+    pic: pmr,
   },
   
   {
-    artist: 'Fractures',
-    art: Fracture,
+    name: 'Fractures',
+    pic: Fracture,
   },
   
   {
-    artist: 'Cancer',
-    art: 'https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80',
+    name: 'Cancer',
+    pic: cancer,
   },
   {
-    artist: 'Deep Vein Thrombosis (DVT)',
-    art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
+    name: 'Deep Vein Thrombosis (DVT)',
+    pic: DVT ,
   },
   {
-    artist: 'Cellulitis',
-    art: Cellulitis,
+    name: 'Cellulitis',
+    pic: Cellulitis,
   },
   {
-    artist: 'Rheumatoid Arthritis',
-    art: 'Frontend/src/images/HeadNeck.jpg',
+    name: 'Rheumatoid Arthritis',
+    pic: rheumatism,
   },
 
 ];
@@ -62,21 +68,21 @@ const ScrollAreaHorizontalDemo = () => {
       scrollbarSize={8} // Adjust size as needed
     >
       <div className="flex w-auto space-x-4 p-4">
-        {works.map((artwork, index) => (
+        {FlagImages.map((redflag, index) => (
           <figure key={index} className="shrink-0">
             <div className="overflow-hidden rounded-md">
               <img
-                src={artwork.art}
-                alt={`Photo by ${artwork.artist}`}
+                src={redflag.pic}
+                alt={`Photo by ${redflag.name}`}
                 className="aspect-[3/4] h-fit w-fit object-cover"
                 width={300}
                 height={400}
               />
             </div>
             <figcaption className="pt-2 text-xs text-muted-foreground">
-              Red Flag Area: {' '}
+              {' '}
               <span className="font-semibold text-foreground">
-                {artwork.artist}
+                {redflag.name}
               </span>
             </figcaption>
           </figure>

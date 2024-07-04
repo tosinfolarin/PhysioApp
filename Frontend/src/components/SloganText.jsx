@@ -1,6 +1,6 @@
 const Slogan = () => {
     return ( 
-        <h3 className="slogan"> Helping the NHS to facilitate WaitLess Wellness</h3>
+        <h3 className="slogan"> Working to facilitate WaitLess Wellness</h3>
      );
 }
  
