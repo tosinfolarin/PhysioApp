@@ -9,6 +9,9 @@ import SignUp from './components/SignUpPage';
 import NeckExercises from './components/NeckEx1';
 import NeckExercises2 from './components/NeckEx2';
 import NeckExercises3 from './components/NeckEx3';
+import ShoulderExercises from './components/ShoulderEx1';
+import ShoulderExercises2 from './components/ShoulderEx2';
+import ShoulderExercises3 from './components/ShoulderEx3';
 
 
 function App() {
@@ -24,6 +27,9 @@ function App() {
         <Route path="/neck-pain" element={<NeckExercises/>}/>
         <Route path="/neck-pain/level-2" element={<NeckExercises2/>}/>
         <Route path="/neck-pain/level-3" element={<NeckExercises3/>}/>
+        <Route path="/shoulder-pain" element={<ShoulderExercises/>}/>
+        <Route path="/shoulder-pain/level-2" element={<ShoulderExercises2/>}/>
+        <Route path="/shoulder-pain/level-3" element={<ShoulderExercises3/>}/>
         
       </Routes>
     </Router>
