@@ -42,6 +42,18 @@ import LowerExercises3 from './components/LowerEx3';
 import UpperExercises from './components/UpperEx1';
 import UpperExercises2 from './components/UpperEx2';
 import UpperExercises3 from './components/UpperEx3';
+import CAD from './components/Cad';
+import Myelopathy from './components/Myelopathy';
+import CompartmentSyndrome from './components/CompartmentSyndrome';
+import CaudaEquina from './components/CaudaEquina';
+import Polymyalgia from './components/Polymyalgia';
+import Fracture from './components/Fractures';
+import Cancer from './components/Cancer';
+import DVT from './components/DVT';
+import Cellulitis from './components/Cellulitis';
+import Rheumatism from './components/Rheumatism';
+
+
 
 
 
@@ -98,6 +110,19 @@ function App() {
         <Route path="/upper-limb-paresthesia" element={<UpperExercises/>}/>
         <Route path="/upper-limb-paresthesia/level-2" element={<UpperExercises2/>}/>
         <Route path="/upper-limb-paresthesia/level-3" element={<UpperExercises3/>}/>
+        <Route path="/cad" element={<CAD/>}/>
+        <Route path="/myelopathy" element={<Myelopathy/>}/>
+        <Route path="/compartment-syndrome" element={<CompartmentSyndrome/>}/>
+        <Route path="/ces" element={<CaudaEquina/>}/>
+        <Route path="/pmr" element={<Polymyalgia/>}/>
+        <Route path="/fractures" element={<Fracture/>}/>
+        <Route path="/cancer" element={<Cancer/>}/>
+        <Route path="/dvt" element={<DVT/>}/>
+        <Route path="/cellulitis" element={<Cellulitis/>}/>
+        <Route path="/rheumatoid-arthritis" element={<Rheumatism/>}/>
+
+        
+
 
 
         

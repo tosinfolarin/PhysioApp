@@ -3,7 +3,7 @@ import MyInjury from "./myInjuryButton";
 import RedflagWarning from "./RedflagWarning";
 import RedFlagInfo from "./RedFlagInfo";
 import RedFlags from "./RedFlagsButton";
-import ScrollAreaHorizontalDemo from "./Scrollbar";
+import ScrollAreaHorizontal from "./Scrollbar";
 import FAQinfo from "./FAQInfo";
 
 
@@ -18,7 +18,7 @@ const Home = () => {
         <RedFlags/>
 
         <h1>Scroll For Red Flag Information</h1>
-      <ScrollAreaHorizontalDemo />
+      <ScrollAreaHorizontal />
        
     
 

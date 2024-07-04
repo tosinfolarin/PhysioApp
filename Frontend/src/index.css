@@ -409,7 +409,11 @@ button:focus-visible {
     align-items: center;
     width: 350px;
     margin-bottom: 50px; /* Adds vertical spacing between rows */
+    text-decoration: none;
     
+  }
+  .injury-item:hover {
+    color: #007bff;
   }
   
   .injury-text-container {
@@ -766,8 +770,14 @@ button:focus-visible {
 
 
 
-/* Exercises containers */
 
+
+
+
+
+
+
+/* Exercises containers */
 
 
 .exercise-container {
@@ -813,6 +823,10 @@ button:focus-visible {
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+.too-hard-link:hover, .too-easy-link:hover {
+  color: rgb(131, 157, 251);
+  
 }
 
 .complexity-link-container {
