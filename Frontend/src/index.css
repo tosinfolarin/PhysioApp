@@ -763,3 +763,60 @@ button:focus-visible {
   display: flex;
   justify-content: center;
 }
+
+
+
+/* Exercises containers */
+
+
+
+.exercise-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 60px;
+}
+.exercise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.exercise-item {  
+  color: rgb(0, 0, 0);
+  width: 310px;
+  height: 310px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.too-easy-link-container {
+
+  padding: 30px;
+  text-align: right;
+}
+
+
+.too-hard-link-container { 
+  padding: 30px;
+  text-align: left;
+}
+
+.too-hard-link, .too-easy-link {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.complexity-link-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
