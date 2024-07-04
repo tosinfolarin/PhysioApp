@@ -24,6 +24,17 @@ import HipExercises3 from './components/HipEx3';
 import ThighExercises from './components/ThighEx1';
 import ThighExercises2 from './components/ThighEx2';
 import ThighExercises3 from './components/ThighEx3';
+import KneeExercises from './components/KneeEx1';
+import KneeExercises2 from './components/KneeEx2';
+import KneeExercises3 from './components/KneeEx3';
+import CalfExercises from './components/CalfEx1';
+import CalfExercises2 from './components/CalfEx2';
+import CalfExercises3 from './components/CalfEx3';
+
+
+
+
+
 
 
 
@@ -55,6 +66,16 @@ function App() {
         <Route path="/thigh-pain" element={<ThighExercises/>}/>
         <Route path="/thigh-pain/level-2" element={<ThighExercises2/>}/>
         <Route path="/thigh-pain/level-3" element={<ThighExercises3/>}/>
+        <Route path="/knee-pain" element={<KneeExercises/>}/>
+        <Route path="/knee-pain/level-2" element={<KneeExercises2/>}/>
+        <Route path="/knee-pain/level-3" element={<KneeExercises3/>}/>
+        <Route path="/calf-pain" element={<CalfExercises/>}/>
+        <Route path="/calf-pain/level-2" element={<CalfExercises2/>}/>
+        <Route path="/calf-pain/level-3" element={<CalfExercises3/>}/>
+        
+        
+       
+   
         
         
       </Routes>
