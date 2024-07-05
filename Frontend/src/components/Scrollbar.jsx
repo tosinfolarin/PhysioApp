@@ -14,7 +14,7 @@ import rheumatism from '../images/rheum.jpg'
 
 const FlagImages = [
   {
-    name: 'Cervical Artery Disease (CAD)',
+    name: 'Cervical Artery Dysfunction (CAD)',
     pic: CAD,
     link: '/cad'
   },

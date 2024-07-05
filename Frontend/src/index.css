@@ -839,3 +839,63 @@ iframe {
   border-radius: 8px;
   border-width: 0px;
 }
+
+.table-container {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+
+.custom-table th, .custom-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #120ee4;
+}
+
+.custom-table th {
+  background-color: #2583b6;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .custom-table th, .custom-table td {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .custom-table th {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-table th, .custom-table td {
+    padding: 6px;
+    font-size: 0.8em;
+  }
+
+  .custom-table th {
+    font-size: 0.9em;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+}
