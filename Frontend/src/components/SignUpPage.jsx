@@ -24,13 +24,14 @@ const SignUp = () => {
     const formData = {
       firstName: data.firstName,
       lastName: data.lastName,
+      preferredName: data.preferredName,
       email: data.email,
       age: data.age,
       contactNumber: data.contactNumber,
       bodyPart: data.bodyPart,
       painScale: data.painScale,
-      lessonType: data.lessonType,
-      lessonPackage: data.lessonPackage,
+      readInfo: data.readInfo,
+      
     };
     console.log(formData);
     setSubmitted(true);
@@ -40,7 +41,7 @@ const SignUp = () => {
   if (submitted) {
     return (
       <div className="thank-you-message">
-        <h2>Redirect Pt to the exercises page.</h2>
+        <h2>As you have mentioned you have ... and you score your pain a ..., the level ... exercises will be the best suit for you </h2>
       </div>
     );
   }
@@ -62,6 +63,10 @@ const SignUp = () => {
           <label>Last Name:</label>
           <input type="text" {...register("lastName")} />
           {errors.lastName && <span className="errorMessage">{errors.lastName.message}</span>}
+          
+          <label>Preferred  Name:</label>
+          <input type="text" {...register("preferredName")} />
+          {errors.preferredName && <span className="errorMessage">{errors.preferredName.message}</span>}
 
           <label>Age:</label>
           <input type="number" {...register("age", { valueAsNumber: true })} />
@@ -92,7 +97,11 @@ const SignUp = () => {
             <input type="checkbox" id="knee" value="knee" {...register("bodyPart")} />
             <label htmlFor="knee">Knee</label>
             <input type="checkbox" id="ankle" value="ankle" {...register("bodyPart")} />
-            <label htmlFor="ankle">Ankle/Foot</label>
+            <label htmlFor="ankle">Ankle/Foot</label><br/>
+            <input type="checkbox" id="lowerlimb" value="lower limb paresthesia" {...register("bodyPart")} />
+            <label htmlFor="lowerlimb">Upper Limb Pins and Needles/Numbness</label> <br/>
+            <input type="checkbox" id="upperlimb" value="upper limb paresthesia" {...register("bodyPart")} />
+            <label htmlFor="upperlimb">Lower Limb Pins and Needles/Numbness</label>
           </div>
 
           <label>On a scale of 0-10, with 10 being the worst, how would you rate the severity of your symptoms?</label>
@@ -113,10 +122,32 @@ const SignUp = () => {
 
           <label>Have you read the Red Flag information?</label>
           <div>
-            <input type="radio" id="yes" value="yes" {...register("lessonType")} />
+            <input type="radio" id="yes" value="yes" {...register("readInfo")} />
             <label htmlFor="yes">Yes</label>
-            <input type="radio" id="no" value="no" {...register("lessonType")} />
+            <input type="radio" id="no" value="no" {...register("readInfo")} />
             <label htmlFor="no">No</label>
+          </div>
+
+          <label>Please select any conditions you have a history of:</label>
+          <div>
+            <input type="checkbox" id="neck" value="neck" {...register("bodyPart")} />
+            <label htmlFor="neck">Thyroid</label>
+            <input type="checkbox" id="shoulder" value="shoulder" {...register("bodyPart")} />
+            <label htmlFor="shoulder">Heart</label>
+            <input type="checkbox" id="elbow" value="elbow" {...register("bodyPart")} />
+            <label htmlFor="elbow">Rheumatism</label>
+            <input type="checkbox" id="wrist" value="wrist" {...register("bodyPart")} />
+            <label htmlFor="wrist">Epilepsy</label>
+            <input type="checkbox" id="back" value="back" {...register("bodyPart")} />
+            <label htmlFor="back">Diabetes</label>
+            <input type="checkbox" id="hip" value="hip" {...register("bodyPart")} />
+            <label htmlFor="hip">Stroke</label>
+            <input type="checkbox" id="knee" value="knee" {...register("bodyPart")} />
+            <label htmlFor="knee">High Cholesterol</label>
+            <input type="checkbox" id="ankle" value="ankle" {...register("bodyPart")} />
+            <label htmlFor="ankle">Blood Pressure</label>
+            <input type="checkbox" id="ankle" value="ankle" {...register("bodyPart")} />
+            <label htmlFor="ankle">Cancer</label>
           </div>
 
           <input type="submit" />
