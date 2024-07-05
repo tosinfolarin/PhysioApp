@@ -31,6 +31,7 @@ const SignUp = () => {
       bodyPart: data.bodyPart,
       painScale: data.painScale,
       readInfo: data.readInfo,
+      pastMedHistory: data.pastMedHistory,
       
     };
     console.log(formData);
@@ -130,23 +131,23 @@ const SignUp = () => {
 
           <label>Please select any conditions you have a history of:</label>
           <div>
-            <input type="checkbox" id="neck" value="neck" {...register("bodyPart")} />
+            <input type="checkbox" id="thyroid" value="thyroid" {...register("pastMedHistory")} />
             <label htmlFor="neck">Thyroid</label>
-            <input type="checkbox" id="shoulder" value="shoulder" {...register("bodyPart")} />
+            <input type="checkbox" id="shoulder" value="shoulder" {...register("pastMedHistory")} />
             <label htmlFor="shoulder">Heart</label>
-            <input type="checkbox" id="elbow" value="elbow" {...register("bodyPart")} />
+            <input type="checkbox" id="elbow" value="elbow" {...register("pastMedHistory")} />
             <label htmlFor="elbow">Rheumatism</label>
-            <input type="checkbox" id="wrist" value="wrist" {...register("bodyPart")} />
+            <input type="checkbox" id="wrist" value="wrist" {...register("pastMedHistory")} />
             <label htmlFor="wrist">Epilepsy</label>
-            <input type="checkbox" id="back" value="back" {...register("bodyPart")} />
+            <input type="checkbox" id="back" value="back" {...register("pastMedHistory")} />
             <label htmlFor="back">Diabetes</label>
-            <input type="checkbox" id="hip" value="hip" {...register("bodyPart")} />
+            <input type="checkbox" id="hip" value="hip" {...register("pastMedHistory")} />
             <label htmlFor="hip">Stroke</label>
-            <input type="checkbox" id="knee" value="knee" {...register("bodyPart")} />
+            <input type="checkbox" id="knee" value="knee" {...register("pastMedHistory")} />
             <label htmlFor="knee">High Cholesterol</label>
-            <input type="checkbox" id="ankle" value="ankle" {...register("bodyPart")} />
+            <input type="checkbox" id="ankle" value="ankle" {...register("pastMedHistory")} />
             <label htmlFor="ankle">Blood Pressure</label>
-            <input type="checkbox" id="ankle" value="ankle" {...register("bodyPart")} />
+            <input type="checkbox" id="ankle" value="ankle" {...register("pastMedHistory")} />
             <label htmlFor="ankle">Cancer</label>
           </div>
 
