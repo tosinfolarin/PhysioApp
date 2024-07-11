@@ -231,7 +231,7 @@ button:focus-visible {
 
 .red-flag-intro {
   flex: 0 1 40%; /* Adjust flex properties as needed */
-  padding: 20px; /* Increase padding for better spacing */
+  padding: 40px; /* Increase padding for better spacing */
   font-size: 14px; /* Adjust font size as needed */
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -259,7 +259,7 @@ button:focus-visible {
 }
 
 .red-flag-info-container {
-  width: 80%; /* Adjust this value to control the width of the container */
+  width: 80.2%; /* Adjust this value to control the width of the container */
   margin: 0 auto; /* Center the container horizontally */
   padding: 20px; /* Add padding for space inside the container */
   text-align: center; /* Center-align the text */
@@ -350,7 +350,8 @@ button:focus-visible {
 
 .outer-fcontainer {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  text-align: center;
   
 }
 

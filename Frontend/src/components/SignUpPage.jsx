@@ -13,9 +13,21 @@ const SignUp = () => {
   const schema = z.object({
     firstName: z.string().min(2, { message: "First name must be at least 2 characters long" }).max(30),
     lastName: z.string().min(2, { message: "Last name must be at least 2 characters long" }).max(30),
+    preferredName: z.string().min(2, { message: "Last name must be at least 2 characters long" }).max(30),
+    age: z.number().min(17, { message: "You must be at least 16 years old to use this application. Younger patients require pediatric involvement" }).max(120, { message: "Please enter a valid age" }),
     email: z.string().email({ message: "Please enter a valid email address" }),
-    age: z.number().min(17, { message: "You must be at least 16 years old to use this application." }).max(120, { message: "Please enter a valid age" }),
-    contactNumber: z.string().min(11, { message: "Please enter a valid contact number" }).max(16),
+    contactNumber: z.string().min(1, { message: "Phone number is required" })
+    .regex(/^\+?[1-9]\d{1,14}$/, { message: "Please enter a valid phone number" }),
+    password: z.string().min(8, { message: "Password must be at least 8 characters long" })
+    .max(100, { message: "Password must be at most 100 characters long" })
+    .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
+    .regex(/[a-z]/, { message: "Password must contain at least one lowercase letter" })
+    .regex(/[0-9]/, { message: "Password must contain at least one number" })
+    .regex(/[^a-zA-Z0-9]/, { message: "Password must contain at least one special character" }),
+    bodyPart: z.array(z.string()).nonempty({ message: "Please select an area that you experience your symptoms" }),
+    painScale: z.string().nonempty({ message: "Please rate your pain on a scale of 0-10" }),
+    readInfo: z.string().nonempty({ message: "Please indicate whether you have read the Red Flag information" }),
+    pastMedHistory: z.array(z.string()).optional()
   });
 
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(schema) });
@@ -132,23 +144,23 @@ const SignUp = () => {
           <label>Please select any conditions you have a history of:</label>
           <div>
             <input type="checkbox" id="thyroid" value="thyroid" {...register("pastMedHistory")} />
-            <label htmlFor="neck">Thyroid</label>
-            <input type="checkbox" id="shoulder" value="shoulder" {...register("pastMedHistory")} />
-            <label htmlFor="shoulder">Heart</label>
-            <input type="checkbox" id="elbow" value="elbow" {...register("pastMedHistory")} />
-            <label htmlFor="elbow">Rheumatism</label>
-            <input type="checkbox" id="wrist" value="wrist" {...register("pastMedHistory")} />
-            <label htmlFor="wrist">Epilepsy</label>
-            <input type="checkbox" id="back" value="back" {...register("pastMedHistory")} />
-            <label htmlFor="back">Diabetes</label>
-            <input type="checkbox" id="hip" value="hip" {...register("pastMedHistory")} />
-            <label htmlFor="hip">Stroke</label>
-            <input type="checkbox" id="knee" value="knee" {...register("pastMedHistory")} />
-            <label htmlFor="knee">High Cholesterol</label>
-            <input type="checkbox" id="ankle" value="ankle" {...register("pastMedHistory")} />
-            <label htmlFor="ankle">Blood Pressure</label>
-            <input type="checkbox" id="ankle" value="ankle" {...register("pastMedHistory")} />
-            <label htmlFor="ankle">Cancer</label>
+            <label htmlFor="thyroid">Thyroid</label>
+            <input type="checkbox" id="heart" value="heart" {...register("pastMedHistory")} />
+            <label htmlFor="heart">Heart</label>
+            <input type="checkbox" id="rheumatism" value="rheumatism" {...register("pastMedHistory")} />
+            <label htmlFor="rheumatism">Rheumatism</label>
+            <input type="checkbox" id="epilepsy" value="epilepsy" {...register("pastMedHistory")} />
+            <label htmlFor="epilepsy">Epilepsy</label>
+            <input type="checkbox" id="diabetes" value="diabetes" {...register("pastMedHistory")} />
+            <label htmlFor="diabetes">Diabetes</label>
+            <input type="checkbox" id="stroke" value="stroke" {...register("pastMedHistory")} />
+            <label htmlFor="stroke">Stroke</label>
+            <input type="checkbox" id="high-cholesterol" value="high-cholesterol" {...register("pastMedHistory")} />
+            <label htmlFor="high-cholesterol">High Cholesterol</label>
+            <input type="checkbox" id="blood-pressure" value="blood-pressure" {...register("pastMedHistory")} />
+            <label htmlFor="blood-pressure">Blood Pressure</label>
+            <input type="checkbox" id="cancer" value="cancer" {...register("pastMedHistory")} />
+            <label htmlFor="cancer">Cancer</label>
           </div>
 
           <input type="submit" />

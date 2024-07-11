@@ -11,26 +11,17 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const schema = z.object({
-    firstName: z.string().min(2, { message: "First name must be at least 2 characters long" }).max(30),
-    lastName: z.string().min(2, { message: "Last name must be at least 2 characters long" }).max(30),
     email: z.string().email({ message: "Please enter a valid email address" }),
-    age: z.number().min(17, { message: "You must be at least 16 years old to use this application." }).max(120, { message: "Please enter a valid age" }),
-    contactNumber: z.string().min(11, { message: "Please enter a valid contact number" }).max(16),
+    password: z.string().min(1, { message: "Password is required" }),
   });
+  
 
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(schema) });
 
   const submitData = (data) => {
     const formData = {
-      firstName: data.firstName,
-      lastName: data.lastName,
       email: data.email,
-      age: data.age,
-      contactNumber: data.contactNumber,
-      bodyPart: data.bodyPart,
-      painScale: data.painScale,
-      lessonType: data.lessonType,
-      lessonPackage: data.lessonPackage,
+      password: data.password,
     };
     console.log(formData);
     setSubmitted(true);
