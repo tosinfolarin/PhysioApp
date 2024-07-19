@@ -25,7 +25,7 @@ const SignUp = () => {
     };
     console.log(formData);
     setSubmitted(true);
-    navigate("/exercises"); // Navigate to exercises page
+    navigate("/MyProfile"); // Navigate to exercises page
   };
 
   if (submitted) {
@@ -51,8 +51,8 @@ const SignUp = () => {
           {errors.email && <span className="errorMessage">{errors.email.message}</span>}
 
           <label>Password:</label>
-          <input type="email" {...register("email")} />
-          {errors.email && <span className="errorMessage">{errors.email.message}</span>}
+          <input type="password" {...register("password")} />
+          {errors.password && <span className="errorMessage">{errors.password.message}</span>}
 
      
   

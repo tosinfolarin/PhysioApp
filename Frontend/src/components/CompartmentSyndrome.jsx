@@ -26,7 +26,7 @@ const CompartmentSyndrome = () => {
                     <td>Information about what it is</td>
                     <td>Information about signs and symptoms</td>
                     <td>Information about risk factors</td>
-                    <td>Information about actions to take</td>
+                    <td>Alert your GP Immediately</td>
                 </tr>
                 </tbody>
             </table>

@@ -17,7 +17,7 @@ const SignUp = () => {
     age: z.number().min(17, { message: "You must be at least 16 years old to use this application. Younger patients require pediatric involvement" }).max(120, { message: "Please enter a valid age" }),
     email: z.string().email({ message: "Please enter a valid email address" }),
     contactNumber: z.string().min(1, { message: "Phone number is required" })
-    .regex(/^\+?[1-9]\d{1,14}$/, { message: "Please enter a valid phone number" }),
+    .regex(/^\d+$/, { message: "Please enter a valid phone number" }),
     password: z.string().min(8, { message: "Password must be at least 8 characters long" })
     .max(100, { message: "Password must be at most 100 characters long" })
     .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
@@ -48,7 +48,7 @@ const SignUp = () => {
     };
     console.log(formData);
     setSubmitted(true);
-    navigate("/exercises"); // Navigate to exercises page
+    navigate("/MyProfile"); // Navigate to exercises page
   };
 
   if (submitted) {

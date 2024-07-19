@@ -26,7 +26,7 @@ const Myelopathy = () => {
                     <td>Information about what it is</td>
                     <td>Information about signs and symptoms</td>
                     <td>Information about risk factors</td>
-                    <td>Information about actions to take</td>
+                    <td>Go to A&E Immediately</td>
                 </tr>
                 </tbody>
             </table>
