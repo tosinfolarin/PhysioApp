@@ -13,22 +13,24 @@ const SignUp = () => {
   const schema = z.object({
     firstName: z.string().min(2, { message: "First name must be at least 2 characters long" }).max(30),
     lastName: z.string().min(2, { message: "Last name must be at least 2 characters long" }).max(30),
-    preferredName: z.string().min(2, { message: "Last name must be at least 2 characters long" }).max(30),
-    age: z.number().min(17, { message: "You must be at least 16 years old to use this application. Younger patients require pediatric involvement" }).max(120, { message: "Please enter a valid age" }),
+    preferredName: z.string().min(2, { message: "Preferred name must be at least 2 characters long" }).max(30),
+    age: z.number().min(17, { message: "You must be at least 17 years old to use this application. Younger patients require pediatric involvement" }).max(120, { message: "Please enter a valid age" }),
     email: z.string().email({ message: "Please enter a valid email address" }),
     contactNumber: z.string().min(1, { message: "Phone number is required" })
-    .regex(/^\d+$/, { message: "Please enter a valid phone number" }),
+      .regex(/^\d+$/, { message: "Please enter a valid phone number" }),
     password: z.string().min(8, { message: "Password must be at least 8 characters long" })
-    .max(100, { message: "Password must be at most 100 characters long" })
-    .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
-    .regex(/[a-z]/, { message: "Password must contain at least one lowercase letter" })
-    .regex(/[0-9]/, { message: "Password must contain at least one number" })
-    .regex(/[^a-zA-Z0-9]/, { message: "Password must contain at least one special character" }),
-    bodyPart: z.array(z.string()).nonempty({ message: "Please select an area that you experience your symptoms" }),
+      .max(100, { message: "Password must be at most 100 characters long" })
+      .regex(/[A-Z]/, { message: "Password must contain at least one uppercase letter" })
+      .regex(/[a-z]/, { message: "Password must contain at least one lowercase letter" })
+      .regex(/[0-9]/, { message: "Password must contain at least one number" })
+      .regex(/[^a-zA-Z0-9]/, { message: "Password must contain at least one special character" }),
+    bodyPart: z.array(z.string()).nonempty({ message: "Please select an area where you experience your symptoms" }),
     painScale: z.string().nonempty({ message: "Please rate your pain on a scale of 0-10" }),
     readInfo: z.string().nonempty({ message: "Please indicate whether you have read the Red Flag information" }),
     pastMedHistory: z.array(z.string()).optional()
+
   });
+  
 
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(schema) });
 
@@ -37,9 +39,10 @@ const SignUp = () => {
       firstName: data.firstName,
       lastName: data.lastName,
       preferredName: data.preferredName,
-      email: data.email,
       age: data.age,
       contactNumber: data.contactNumber,
+      email: data.email,
+      password: data.password,
       bodyPart: data.bodyPart,
       painScale: data.painScale,
       readInfo: data.readInfo,
@@ -48,13 +51,13 @@ const SignUp = () => {
     };
     console.log(formData);
     setSubmitted(true);
-    navigate("/MyProfile"); // Navigate to exercises page
+    navigate("/Sign-in"); // Navigate to exercises page
   };
 
   if (submitted) {
     return (
       <div className="thank-you-message">
-        <h2>As you have mentioned you have ... and you score your pain a ..., the level ... exercises will be the best suit for you </h2>
+        <h2>Redirect Pt to the exercises page.</h2>
       </div>
     );
   }
@@ -69,6 +72,7 @@ const SignUp = () => {
           <h1>Sign Up</h1>
           <h3>Please sign up if you do not already have an account.</h3>
           
+
           <label>First Name:</label>
           <input type="text" {...register("firstName")} />
           {errors.firstName && <span className="errorMessage">{errors.firstName.message}</span>}
@@ -92,6 +96,10 @@ const SignUp = () => {
           <label>Email:</label>
           <input type="email" {...register("email")} />
           {errors.email && <span className="errorMessage">{errors.email.message}</span>}
+
+          <label>Password:</label>
+          <input type="password" {...register("password")} />
+          {errors.password && <span className="errorMessage">{errors.password.message}</span>}
 
           <label>Symptoms Area:</label>
           <div>
@@ -162,7 +170,7 @@ const SignUp = () => {
             <input type="checkbox" id="cancer" value="cancer" {...register("pastMedHistory")} />
             <label htmlFor="cancer">Cancer</label>
           </div>
-
+  
           <input type="submit" />
 
           <div className="sign-in-option">

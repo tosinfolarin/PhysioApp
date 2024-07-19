@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+const SignIn = () => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
 
@@ -59,7 +59,9 @@ const SignUp = () => {
           <input type="submit" />
 
           <div className="sign-up-option">
+            {/* <p> Want to create an account? <Link to="/Sign-Up">Sign Up</Link></p> */}
             <p> Want to create an account? <Link to="/Sign-Up">Sign Up</Link></p>
+            
           </div>
         </form>
       </div>
@@ -67,4 +69,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;

@@ -5,7 +5,9 @@ import Injuries from './components/InjuriesPage';
 import FAQs from './components/FAQPage';
 import MyProfile from './components/MyProfilePage';
 import SignIn from './components/SigningInPage';
-import SignUp from './components/SignUpPage';
+import SignUp from './components/SigningUpPage';
+
+// import SignUp from './components/SignUpPage2';
 import NeckExercises from './components/NeckEx1';
 import NeckExercises2 from './components/NeckEx2';
 import NeckExercises3 from './components/NeckEx3';
@@ -52,14 +54,6 @@ import Cancer from './components/Cancer';
 import DVT from './components/DVT';
 import Cellulitis from './components/Cellulitis';
 import Rheumatism from './components/Rheumatism';
-
-
-
-
-
-
-
-
 
 
 
