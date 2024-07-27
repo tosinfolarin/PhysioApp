@@ -6,8 +6,6 @@ import FAQs from './components/FAQPage';
 import MyProfile from './components/MyProfilePage';
 import SignIn from './components/SigningInPage';
 import SignUp from './components/SigningUpPage';
-
-// import SignUp from './components/SignUpPage2';
 import NeckExercises from './components/NeckEx1';
 import NeckExercises2 from './components/NeckEx2';
 import NeckExercises3 from './components/NeckEx3';
@@ -55,10 +53,10 @@ import DVT from './components/DVT';
 import Cellulitis from './components/Cellulitis';
 import Rheumatism from './components/Rheumatism';
 
-
-
+import Test from './components/Test';
 
 function App() {
+
   return (
     <Router>
       <Routes>
@@ -115,16 +113,9 @@ function App() {
         <Route path="/cellulitis" element={<Cellulitis/>}/>
         <Route path="/rheumatoid-arthritis" element={<Rheumatism/>}/>
 
-        
+        <Route path="/Test" element={<Test/>}/>
 
 
-
-        
-        
-       
-   
-        
-        
       </Routes>
     </Router>
   );
