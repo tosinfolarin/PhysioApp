@@ -54,6 +54,8 @@ import Cellulitis from './components/Cellulitis';
 import Rheumatism from './components/Rheumatism';
 
 import Test from './components/Test';
+import Sign from './components/Sign';
+
 
 function App() {
 
@@ -113,6 +115,7 @@ function App() {
         <Route path="/cellulitis" element={<Cellulitis/>}/>
         <Route path="/rheumatoid-arthritis" element={<Rheumatism/>}/>
 
+        <Route path="/Sign" element={<Sign/>}/>
         <Route path="/Test" element={<Test/>}/>
 
 

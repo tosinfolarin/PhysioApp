@@ -5,16 +5,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
+  
 
   const schema = z.object({
     firstName: z.string().min(2, { message: "First name must be at least 2 characters long" }).max(30),
     lastName: z.string().min(2, { message: "Last name must be at least 2 characters long" }).max(30),
     preferredName: z.string().min(2, { message: "Preferred name must be at least 2 characters long" }).max(30),
-    age: z.number().min(17, { message: "You must be at least 17 years old to use this application. Younger patients require pediatric involvement" }).max(120, { message: "Please enter a valid age" }),
+    // age: z.number().min(17, { message: "You must be at least 17 years old to use this application. Younger patients require pediatric involvement" }).max(120, { message: "Please enter a valid age" }),
     email: z.string().email({ message: "Please enter a valid email address" }),
     contactNumber: z.string().min(1, { message: "Phone number is required" })
       .regex(/^\d+$/, { message: "Please enter a valid phone number" }),
@@ -26,7 +28,7 @@ const SignUp = () => {
       .regex(/[^a-zA-Z0-9]/, { message: "Password must contain at least one special character" }),
     bodyPart: z.array(z.string()).nonempty({ message: "Please select an area where you experience your symptoms" }),
     painScale: z.string().nonempty({ message: "Please rate your pain on a scale of 0-10" }),
-    readInfo: z.string().nonempty({ message: "Please indicate whether you have read the Red Flag information" }),
+    readInfo: z.string().refine(value => value === "yes", { message: "Please read the red flag information before signing in" }),
     pastMedHistory: z.array(z.string()).optional()
 
   });
@@ -39,7 +41,7 @@ const SignUp = () => {
       firstName: data.firstName,
       lastName: data.lastName,
       preferredName: data.preferredName,
-      age: data.age,
+      // age: data.age,
       contactNumber: data.contactNumber,
       email: data.email,
       password: data.password,
@@ -51,16 +53,24 @@ const SignUp = () => {
     };
     console.log(formData);
     setSubmitted(true);
-    navigate("/Sign-in"); // Navigate to exercises page
-  };
+// sends information to the server taking the data from the formData dataset
+      axios.post('http://localhost:8080/api/Sign-Up', data )
+      // Then stores the results and redirects the user to the sign in page
+      .then(res => 
+        {
+          console.log(res);
+          navigate('/Sign-in')
+      })
+      .catch(err => console.log(err));
 
-  if (submitted) {
-    return (
-      <div className="thank-you-message">
-        <h2>Redirect Pt to the exercises page.</h2>
-      </div>
-    );
-  }
+    // navigate("/Sign-in"); // Navigate to sign in page
+
+
+  };
+  
+
+  
+
 
   return (
     <div>
@@ -85,9 +95,9 @@ const SignUp = () => {
           <input type="text" {...register("preferredName")} />
           {errors.preferredName && <span className="errorMessage">{errors.preferredName.message}</span>}
 
-          <label>Age:</label>
+          {/* <label>Enter Date of Birth:</label>
           <input type="number" {...register("age", { valueAsNumber: true })} />
-          {errors.age && <span className="errorMessage">{errors.age.message}</span>}
+          {errors.age && <span className="errorMessage">{errors.age.message}</span>} */}
 
           <label>Contact Number:</label>
           <input type="text" {...register("contactNumber")} />

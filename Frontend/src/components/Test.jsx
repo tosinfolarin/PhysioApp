@@ -33,6 +33,7 @@ const Test = () => {
                 <th>Symptom Area</th>
               </tr>
             </thead>
+            
             <tbody>
               {data.map((data, i) => (
                 <tr key={i}>

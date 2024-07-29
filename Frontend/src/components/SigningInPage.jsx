@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 
 const SignIn = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -25,16 +27,25 @@ const SignIn = () => {
     };
     console.log(formData);
     setSubmitted(true);
-    navigate("/MyProfile"); // Navigate to exercises page
+    // navigate("/MyProfile"); // Navigate to exercises page
+
+    // const handleSubmit = (event) => {
+    //   event.preventDefault();
+    axios.post('http://localhost:8080/api/Sign-in', data)
+    .then(res => {
+      if(res.data.Login) {
+        navigate("/MyProfile")
+      } else {
+        alert("The sign in credentials are incorrect, Please Try again.")
+      }
+      console.log(res);
+       
+    })
+      .catch(err => console.log(err));
+  
+
   };
 
-  if (submitted) {
-    return (
-      <div className="thank-you-message">
-        <h2>Redirect Pt to the exercises page.</h2>
-      </div>
-    );
-  }
 
   return (
     <div>
@@ -59,9 +70,7 @@ const SignIn = () => {
           <input type="submit" />
 
           <div className="sign-up-option">
-            {/* <p> Want to create an account? <Link to="/Sign-Up">Sign Up</Link></p> */}
             <p> Want to create an account? <Link to="/Sign-Up">Sign Up</Link></p>
-            
           </div>
         </form>
       </div>
