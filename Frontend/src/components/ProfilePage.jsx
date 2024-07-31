@@ -3,6 +3,11 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
+
+
+axios.defaults.withCredentials = true;
+
 const Profile = () => {
   const [diaryEntry, setDiaryEntry] = useState(''); // This holds the diary entry
 
@@ -25,7 +30,7 @@ const Profile = () => {
 
   const navigate = useNavigate()
   useEffect(()=> {
-    axios.defaults.withCredentials = true; // 
+    
     axios.get('http://localhost:8080/api/MyProfile')
     .then(res => { 
       if(res.data.valid){
@@ -57,6 +62,9 @@ const Profile = () => {
             <div className="profile-username">
               <span> {firstName} {lastName}</span>
             </div>
+            
+            <button>My Details</button>
+            
             <div className="profile-other-info">
             <span> Past Medical History: <br></br>{pastMedHistory} </span>
             </div>
@@ -70,7 +78,7 @@ const Profile = () => {
                 onChange={handleDiaryChange} // Update state on change
                 placeholder="Document your progress here..."
                 rows="20"
-                cols="150"
+                cols="100"
               />
               <button type="submit">Submit Diary Entry</button>
             </form>

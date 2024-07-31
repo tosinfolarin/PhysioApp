@@ -26,8 +26,22 @@ const Cancer = () => {
                 <tbody>
                 <tr>
                     <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
-                    <td>Information about risk factors</td>
+                    <td>Fatigue
+<br></br>Lump or area of thickening that can be felt under the skin
+<br></br>Weight changes, including unintended loss or gain
+<br></br>Skin changes, such as yellowing, darkening or redness of the skin, sores that won't heal, or changes to existing moles
+<br></br>Changes in bowel or bladder habits
+<br></br>Persistent cough or trouble breathing
+<br></br>Difficulty swallowing
+<br></br>Hoarseness
+<br></br>Persistent indigestion or discomfort after eating
+<br></br>Persistent, unexplained muscle or joint pain
+<br></br>Persistent, unexplained fevers or night sweats
+<br></br>Unexplained bleeding or bruising</td>
+                    <td>Lifestyle factors - Smoking, a high-fat diet, and working with toxic chemicals
+                    <br></br> Family history, inheritance, and genetics 
+                    <br></br>Exposures to certain viruses - Epstein-Barr virus and HIV, the virus that causes AIDS, have been linked to an increased risk of developing certain childhood cancers
+                    </td>
                     <td>Alert your GP Immediately</td>
                 </tr>
                 </tbody>

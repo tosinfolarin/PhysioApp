@@ -23,9 +23,15 @@ const Polymyalgia = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
-                    <td>Information about risk factors</td>
+                    <td>Polymyalgia rheumatica is a condition that causes pain, stiffness and inflammation in the muscles around the shoulders, neck and hips.</td>
+                    <td>Extreme tiredness
+                    <br></br><br></br>Loss of appetite
+                    <br></br><br></br>Weight loss
+                    <br></br><br></br>Depression
+                    <br></br><br></br>Morning Stiffness >45 minutes</td>
+                    <td>There is no known true cause of PMR however, it is thought to be an inflammatory condition which may stem from environmental triggers such as a virus
+                    <br></br><br></br>Certain genes may also predispose you to development of this condition.
+                    </td>
                     <td>Alert your GP Immediately</td>
                 </tr>
                 </tbody>

@@ -20,7 +20,7 @@ const HipExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="hip1"
+                            src="https://www.youtube.com/embed/EdeCX_7XAd0"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -30,7 +30,7 @@ const HipExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="hip2"
+                            src="https://www.youtube.com/embed/xFy49jrHv_M"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -40,7 +40,7 @@ const HipExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="hip3"
+                            src="https://www.youtube.com/embed/1vDokfMMDCw"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -53,7 +53,7 @@ const HipExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="hip4"
+                            src="https://www.youtube.com/embed/Y9Q1wZYA1o8"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -63,7 +63,7 @@ const HipExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="hip5"
+                            src="https://www.youtube.com/embed/s1NhGLQenlA"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -73,7 +73,7 @@ const HipExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="hip6"
+                            src="https://www.youtube.com/embed/9dXX7i88Vpo"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

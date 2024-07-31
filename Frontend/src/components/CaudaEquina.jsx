@@ -23,9 +23,26 @@ const CaudaEquina = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
-                    <td>Information about risk factors</td>
+                    <td>Cauda Equina Syndrome (CES) is compression of the spinal nerves towards the bottom of the spinal cord. It is often linked with back pain</td>
+                    <td>Loss of feeling or pins and needles between your inner thighs or genitals
+                    <br></br><br></br>Numbness in or around your back passage or buttocks
+                    <br></br><br></br>Altered feeling when using toilet paper to wipe yourself
+                    <br></br><br></br>Increasing difficulty when you try to urinate
+                    <br></br><br></br>Increasing difficulty when you try to stop or control your flow of urine
+                    <br></br><br></br>Loss of sensation when you pass urine
+                    <br></br><br></br>Unaware of leaking urine or recent need to use pads
+                    <br></br><br></br>Not knowing when your bladder is either full or empty
+                    <br></br><br></br>Inability to stop bowel movement or being unaware of leaking
+                    <br></br><br></br>Loss of sensation when you pass a bowel motion
+                    <br></br><br></br>Change in ability to achieve an erection or ejaculate
+                    <br></br><br></br>Loss of sensation in genitals during sexual intercourse
+                </td>
+                    <td>Disc herniations in the lower back
+                    <br></br><br></br> Trauma to the back
+                    <br></br><br></br> Spinal Tumours
+                    <br></br><br></br> Spinal Stenosis (rare)
+                    <br></br><br></br> Vertebral fractures resulting from osteoporosis (rare)
+                    </td>
                     <td>Go to A&E Immediately</td>
                 </tr>
                 </tbody>
