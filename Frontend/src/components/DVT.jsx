@@ -23,8 +23,12 @@ const DVT = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
+                    <td>Deep vein thrombosis (DVT) occurs when a blood clot (thrombus) forms in one or more of the deep veins in the body, usually in the legs.</td>
+                    <td>Throbbing pain in 1 leg (rarely both legs), usually in the calf or thigh, when walking or standing up
+                    <br></br><br></br>swelling in 1 leg (rarely both legs)
+                    <br></br><br></br>warm skin around the painful area
+                    <br></br><br></br>red or darkened skin around the painful area – this may be harder to see on brown or black skin
+                    <br></br><br></br>swollen veins that are hard or sore when you touch them</td>
                     <td>Information about risk factors</td>
                     <td>Go to A&E Immediately</td>
                 </tr>
