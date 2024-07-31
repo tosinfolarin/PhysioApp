@@ -24,7 +24,10 @@ const CompartmentSyndrome = () => {
                 <tbody>
                 <tr>
                     <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
+                    <td>pain in a muscle – this could feel like a burning pain or a deep ache with movement making the pain worse.
+<br></br><br></br>swelling or bulging of the muscle
+<br></br><br></br>numbness, weakness or pins and needles
+<br></br><br></br>tightness or difficulty moving the affected body part</td>
                     <td>Information about risk factors</td>
                     <td>Alert your GP Immediately</td>
                 </tr>

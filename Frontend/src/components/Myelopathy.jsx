@@ -23,9 +23,17 @@ const Myelopathy = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
-                    <td>Information about risk factors</td>
+                    <td>Myelopathy is a an injury to the spinal cord due to severe compression. This can be obtained by trauma, you can be born with it or it can be cause by degenerative disc disease or disc herniation.</td>
+                    <td>Pain in the lower back, neck, arm or leg. <br></br>Tingling, numbness or weakness.
+                    <br></br><br></br>Decreased fine motor skills, balance, and coordination.
+                    <br></br><br></br>Abnormal or increased reflexes in extremities.
+                    <br></br><br></br>Difficulty walking.
+                    <br></br>Loss of bowel or bladder function.</td>
+                    <td>Age  <br></br>
+                    <br></br>A physically demanding occupation
+                    <br></br><br></br>Previous neck injuries
+                    <br></br><br></br>Genetic factors
+                    <br></br><br></br>Tobacco use</td>
                     <td>Go to A&E Immediately</td>
                 </tr>
                 </tbody>

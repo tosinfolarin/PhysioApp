@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+axios.defaults.withCredentials = true;
 
 const SignIn = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -27,10 +28,8 @@ const SignIn = () => {
     };
     console.log(formData);
     setSubmitted(true);
-    // navigate("/MyProfile"); // Navigate to exercises page
-
-    // const handleSubmit = (event) => {
-    //   event.preventDefault();
+    
+    
     axios.post('http://localhost:8080/api/Sign-in', data)
     .then(res => {
       if(res.data.Login) {
@@ -45,7 +44,7 @@ const SignIn = () => {
   
 
   };
-
+  
 
   return (
     <div>

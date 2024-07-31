@@ -9,6 +9,7 @@ import FAQinfo from "./FAQInfo";
 
 
 const Home = () => {
+  
     return ( 
         <div>
         <Navbar/>
