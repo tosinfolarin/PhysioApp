@@ -19,6 +19,10 @@ const Profile = () => {
 
 
   const [name, setName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [pastMedHistory, setPastMedHistory] = useState('')
+
   const navigate = useNavigate()
   useEffect(()=> {
     axios.defaults.withCredentials = true; // 
@@ -26,6 +30,9 @@ const Profile = () => {
     .then(res => { 
       if(res.data.valid){
         setName(res.data.name);
+        setFirstName(res.data.firstName)
+        setLastName(res.data.lastName)
+        setPastMedHistory(res.data.pastMedHistory)
       } else { // This will run if the user is unable to sign in 
         console.log('User is not signed in');
         navigate('/Sign-In');
@@ -48,15 +55,15 @@ const Profile = () => {
               <img src="https://picsum.photos/200/200" alt="placeholder" />
             </div>
             <div className="profile-username">
-              <span>Users Name</span>
+              <span> {firstName} {lastName}</span>
             </div>
             <div className="profile-other-info">
-            <span>Past Medical History</span>
+            <span> Past Medical History: <br></br>{pastMedHistory} </span>
             </div>
           </div>
           <div className="profile-main-content">
           <div className="user-diary">
-            <h2>User Diary</h2>
+            
             <form onSubmit={handleDiarySubmit}>
               <textarea
                 value={diaryEntry} // Bind textarea value to state
