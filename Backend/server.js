@@ -1,58 +1,35 @@
 // Import express.js
 
-// const express = require("express");
-// const mysql = require('mysql')
-// const cors = require('cors')
-
-// // Create express app
-// const app = express();
-
-// app.use(cors()); 
-
-// // creating a variable for the mySQL database
-// const db = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password:"",
-//     database:"PhysioApp"
-
-// })
-
-
-// app.get("/", (req, res)=> {
-//     return res.json("From backend side")
-// })
-
-// //API to get information from the database
-
-// app.get("/Patients", (req, res)=> {
-//     const sql = "SELECT * FROM Patients";
-//     db.query(sql, (err, data)=> {
-//         if(err) return res.json(err);
-//         return res.json(data);
-//     })
-// })
-
-
-// app.listen(8080, () => {
-//     console.log("listening");
-// })
-
-
-
-
-// Import express.js
-
+const session = require("express-session");
 const express = require("express");
 const mysql = require('mysql')
 const cors = require('cors')
 const bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser")
 
 // Create express app
 const app = express();
 
-app.use(cors()); 
+
+app.use(cors({
+    origin: ["http://localhost:5173"],
+    methods: ["POST", "GET"],
+    credentials: true
+})); 
 app.use(express.json());
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(session({
+    secret: 'secret', //This is a secret key used to encrypt the session cookie
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false, // This can be set to true if I am using https
+        maxAge: 1000 * 60 * 60 * 24 // This means the cookie will expire in one day
+    }
+
+
+}))
 
 // creating a variable for the mySQL database
 const db = mysql.createConnection({
@@ -63,23 +40,6 @@ const db = mysql.createConnection({
 
 })
 
-
-
-app.post('/Sign', (req, res) => {
-    const sql = "INSERT INTO Sign (`Name`, `Password` VALUES (?)";
-    const values = [
-        req.body.name,
-        req.body.password
-        
-    ]
-    db.query(sql, [values], (err, data => {
-        if (err) {
-            return res.json("Error");
-        }
-        return res.json(data);
-
-    }))
-})
 
  
 app.get("/Patients", (req, res)=> {
@@ -121,16 +81,29 @@ app.post('/api/Sign-Up', (req, res) => {
 });
 
 
+
+
 // This is an api which checks whether the login credentials entered are the same as what is in the database
 app.post('/api/Sign-in', (req, res) => {
     const sql = "SELECT * FROM Patients WHERE Email = ? and Password = ?";
-    db.query(sql, [req.body.email, req.body.password], (err, result) => {
+    db.query(sql, [req.body.email, req.body.password, req.body.password, req.body.preferredName], (err, result) => {
         if(err) return res.json({Message: "Error inside server"});
+
         // This checks if a record exists. If it does login = true, if not login = false
         if(result.length > 0) {
-            return res.json({Login: true})
+            req.session.email = result[0].Email; // This assigns an email to a session
+            req.session.preferredName  = result[0].PreferredName;
+            console.log('The user logged in is:', req.session.email);
+            
+            return res.json({
+                Login: true, 
+                email: req.session.email,
+                
+            })
         } else {
-            return res.json({Login: false})
+            return res.json({
+                Login: false
+            })
         }
     })
 })
@@ -138,7 +111,20 @@ app.post('/api/Sign-in', (req, res) => {
 
 
 
-
+// This is the backend route for MyProfile once the user logs in
+app.get('/api/MyProfile', (req, res) => {
+    // if the user is logged in, this will return the information of the user
+    if(req.session.email) {
+        return res.json({
+            valid: true, 
+            // email: res.session.email,
+            email: req.session.email,
+            name: req.session.preferredName
+        })
+    } else {
+        return res.json({valid: false})
+    }
+})
 
 
 
