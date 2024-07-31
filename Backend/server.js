@@ -86,13 +86,15 @@ app.post('/api/Sign-Up', (req, res) => {
 // This is an api which checks whether the login credentials entered are the same as what is in the database
 app.post('/api/Sign-in', (req, res) => {
     const sql = "SELECT * FROM Patients WHERE Email = ? and Password = ?";
-    db.query(sql, [req.body.email, req.body.password, req.body.password, req.body.preferredName], (err, result) => {
+    db.query(sql, [req.body.email, req.body.password, req.body.password, req.body.preferredName, req.body.firstName, req.body.lastName], (err, result) => {
         if(err) return res.json({Message: "Error inside server"});
 
         // This checks if a record exists. If it does login = true, if not login = false
         if(result.length > 0) {
             req.session.email = result[0].Email; // This assigns an email to a session
             req.session.preferredName  = result[0].PreferredName;
+            req.session.firstName  = result[0].FirstName;
+            req.session.lastName  = result[0].LastName;
             console.log('The user logged in is:', req.session.email);
             
             return res.json({
@@ -117,9 +119,11 @@ app.get('/api/MyProfile', (req, res) => {
     if(req.session.email) {
         return res.json({
             valid: true, 
-            // email: res.session.email,
+    
             email: req.session.email,
-            name: req.session.preferredName
+            name: req.session.preferredName,
+            firstName: req.session.firstName,
+            lastName: req.session.lastName
         })
     } else {
         return res.json({valid: false})
