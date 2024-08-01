@@ -21,7 +21,24 @@ const Profile = () => {
     
   };
 
+  const handleButtonClick = () => {
+    navigate('/MyDetails');
+  };
 
+  const [auth, setAuth] = useState('') // This checks whether the user is logged in or not, if the user clicks logout it is activated
+  
+  // function to handle the logout property
+  const handleLogOut =  () => {
+    axios.get('http://localhost:8080/api/LogOut')
+    .then(res => {
+      if(res.data.Status === "Success"){
+      location.reload(true);
+    } else {
+      alert("error");
+    }
+    }).catch( err => console.log(err))
+  }
+ 
 
   const [name, setName] = useState('')
   const [firstName, setFirstName] = useState('')
@@ -34,11 +51,13 @@ const Profile = () => {
     axios.get('http://localhost:8080/api/MyProfile')
     .then(res => { 
       if(res.data.valid){
+        setAuth(true);
         setName(res.data.name);
         setFirstName(res.data.firstName)
         setLastName(res.data.lastName)
         setPastMedHistory(res.data.pastMedHistory)
-      } else { // This will run if the user is unable to sign in 
+      } else { // This will run if the user is unable to sign in/ or the user logs out
+        setAuth(false); 
         console.log('User is not signed in');
         navigate('/Sign-In');
       }
@@ -62,16 +81,21 @@ const Profile = () => {
             <div className="profile-username">
               <span> {firstName} {lastName}</span>
             </div>
+
             
-            <button>My Details</button>
+            <button onClick={handleButtonClick} className="myDetailsButton"> View My Details</button>
             
-            <div className="profile-other-info">
+            
+            <div className="profile-pmh">
             <span> Past Medical History: <br></br>{pastMedHistory} </span>
             </div>
+
+            <button className="LogOutButton" onClick={handleLogOut}> Log out</button>
           </div>
           <div className="profile-main-content">
           <div className="user-diary">
-            
+          
+
             <form onSubmit={handleDiarySubmit}>
               <textarea
                 value={diaryEntry} // Bind textarea value to state

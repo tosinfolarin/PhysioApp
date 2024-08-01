@@ -646,16 +646,22 @@ button:focus-visible {
   text-align: center;
 }
 
-.profile-other-info {
+.profile-pmh {
   width: 100%;
+  padding: 5px;
+  border-radius: 8px;
   margin-top: 20px;
   background-color: rgb(143, 158, 158);
-  height: 150px;
+  height: 10rem;
 }
 
 .profile-main-content {
   width: 80%;
   padding-left: 20px;
+}
+
+.diary-text {
+  align-self: start;  
 }
 
 .user-diary {
@@ -670,7 +676,6 @@ button:focus-visible {
 }
 
 
-
 .user-diary form {
   display: flex;
   flex-direction: column;
@@ -679,11 +684,38 @@ button:focus-visible {
 }
 
 
+.myDetailsButton {
+
+  padding: 8px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #5789fe;
+  color: white;
+}
 
 
+.myDetailsButton:hover {
+
+  background-color: #195efe;
+  cursor: pointer;
+}
 
 
+.LogOutButton {
 
+  padding: 8px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #f67a7a;
+  color: white;
+}
+
+
+.LogOutButton:hover {
+
+  background-color: #ff0000;
+  cursor: pointer;
+}
 
 
 

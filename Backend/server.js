@@ -1,4 +1,3 @@
-// Import express.js
 
 const session = require("express-session");
 const express = require("express");
@@ -6,6 +5,8 @@ const mysql = require('mysql')
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
+
+const jwt = require("jsonwebtoken")
 
 // Create express app
 const app = express();
@@ -31,7 +32,7 @@ app.use(session({
 
 }))
 
-// creating a variable for the mySQL database
+// creating a variable for the connection to the mySQL database
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -91,11 +92,17 @@ app.post('/api/Sign-in', (req, res) => {
 
         // This checks if a record exists. If it does login = true, if not login = false
         if(result.length > 0) {
+
+            
             req.session.email = result[0].Email; // This assigns an email to a session
             req.session.preferredName  = result[0].PreferredName;
             req.session.firstName  = result[0].FirstName;
             req.session.lastName  = result[0].LastName;
             req.session.pastMedHistory  = result[0].PastMedHistory;
+            
+            const email = result[0].email;
+            const token = jwt.sign({email}, "our-jsonwebtoken-secret-key", {expiresIn: '1d'} )
+            res.cookie('token', token);
 
 
             console.log('The user logged in is:', req.session.email);
@@ -113,11 +120,28 @@ app.post('/api/Sign-in', (req, res) => {
     })
 })
 
+// this defines the variable to check whether once logged in, if the cookies are matched
+const verifyUser =  (req, res, next) => {
+    const token = req.cookies.token;
+    if(!token) {
+        return res.json({Message: "Token required, please log in"})
+    } else {
+        jwt.verify(token, "our-jsonwebtoken-secret-key", (err, decoded) => {
+            if (err) {
+                return res.json({Message: "Authentication Error"})
+            } else {
+                req.email = decoded.email
+                next();
+            }
+        })
+    }
+}
+
 
 
 
 // This is the backend route for MyProfile once the user logs in
-app.get('/api/MyProfile', (req, res) => {
+app.get('/api/MyProfile', verifyUser, (req, res) => {
     // if the user is logged in, this will return the information of the user
     if(req.session.email) {
         return res.json({
@@ -133,6 +157,19 @@ app.get('/api/MyProfile', (req, res) => {
         return res.json({valid: false})
     }
 })
+
+
+
+
+app.get('/api/LogOut', (req, res) => {
+    res.clearCookie('token');
+    return res.json({Status:"Success"});
+    console.log('user has logged out Successfully')
+})
+
+
+
+
 
 
 

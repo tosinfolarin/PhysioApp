@@ -53,6 +53,8 @@ import DVT from './components/DVT';
 import Cellulitis from './components/Cellulitis';
 import Rheumatism from './components/Rheumatism';
 
+
+import Details from './components/MyDetails';
 import Test from './components/Test';
 
 
@@ -115,7 +117,7 @@ function App() {
         <Route path="/cellulitis" element={<Cellulitis/>}/>
         <Route path="/rheumatoid-arthritis" element={<Rheumatism/>}/>
 
-        
+        <Route path="/MyDetails" element={<Details/>}/>
         <Route path="/Test" element={<Test/>}/>
 
 
