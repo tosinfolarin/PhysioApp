@@ -29,7 +29,13 @@ const DVT = () => {
                     <br></br><br></br>warm skin around the painful area
                     <br></br><br></br>red or darkened skin around the painful area – this may be harder to see on brown or black skin
                     <br></br><br></br>swollen veins that are hard or sore when you touch them</td>
-                    <td>Information about risk factors</td>
+                    <td>Aged over 60
+                    <br></br><br></br> Overweight
+                    <br></br><br></br> Smokers
+                    <br></br><br></br> Have a history of having DVT
+                    <br></br><br></br> Taking the contraceptive pill or HRT
+                    <br></br><br></br> Have cancer or heart failure
+                    <br></br><br></br> Have varicose veins</td>
                     <td>Go to A&E Immediately</td>
                 </tr>
                 </tbody>

@@ -23,9 +23,19 @@ const Fracture = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
-                    <td>Information about risk factors</td>
+                    <td>A fracture is a partial or complete break in the bone.</td>
+                    <td>A visibly out-of-place or misshapen limb or joint
+                    <br></br><br></br>Swelling, bruising, or bleeding
+                    <br></br><br></br>Intense pain
+                    <br></br><br></br>Numbness and tingling
+                    <br></br><br></br>Broken skin with bone protruding
+                    <br></br><br></br>Limited mobility or inability to move a limb or put weight on the leg.</td>
+                    <td>Osteoporosis
+                    <br></br><br></br> Recent Trauma
+                    <br></br><br></br> Low body weight
+                    <br></br><br></br> Smoker
+                    <br></br><br></br> Repetitive Impact
+                    </td>
                     <td>Go to A&E Immediately </td>
                 </tr>
                 </tbody>

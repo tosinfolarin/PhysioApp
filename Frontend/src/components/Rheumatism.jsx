@@ -23,9 +23,19 @@ const Rheumatism = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Information about what it is</td>
-                    <td>Information about signs and symptoms</td>
-                    <td>Information about risk factors</td>
+                    <td>Rheumatoid Arthritis is an autoimmune disease which causes the body to produce an inflammatory response at the joints.</td>
+                    <td>Pain, swelling, stiffness and tenderness in more than one joint. (Likely mirroring the opposite side)
+                        <br></br><br></br>Stiffness, especially in the morning or after sitting for long periods.
+                        <br></br><br></br>Pain and stiffness in the same joints on both sides of your body.
+                        <br></br><br></br>Fatigue
+                        <br></br><br></br>Weakness
+                        <br></br><br></br>Fever</td>
+                    <td>Family History of Rheumatoid Arthritis
+                    <br></br><br></br> Your sex. Women are more likely than men to develop rheumatoid arthritis.
+                    <br></br><br></br>Age - Most commonly begins in middle age
+                    <br></br><br></br>Smoking - Smoking also appears to be associated with greater disease severity.
+                    <br></br><br></br> Overweight
+                    </td>
                     <td>Alert your GP requesting inflammatory markers blood test</td>
                 </tr>
                 </tbody>
