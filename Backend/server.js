@@ -158,15 +158,30 @@ app.get('/api/MyProfile', verifyUser, (req, res) => {
 })
 
 
-
+// This is a route to log the user out by removing the cookies of the session
 
 app.get('/api/LogOut', (req, res) => {
     res.clearCookie('token');
+    console.log('user has logged out Successfully');
     return res.json({Status:"Success"});
-    console.log('user has logged out Successfully')
+    
 })
 
 
+// This sends the information from the notes input to the diary
+app.post('/api/Notes', (req, res) => {
+    const { text, timestamp } = req.body;
+  
+    const query = 'INSERT INTO Notes (text, timestamp) VALUES (?, ?)';
+    db.query(query, [text, timestamp], (err, result) => {
+      if (err) {
+        console.error('Error inserting data into the database:', err);
+        res.status(500).send('Error inserting data into the database');
+        return;
+      }
+      res.status(200).send('Diary entry saved successfully');
+    });
+  });
 
 
 

@@ -1,6 +1,10 @@
 import { useState } from "react";
 
+
+axios.defaults.withCredentials = true;
+
 const Textbox = () => {
+
   const [diaryEntry, setDiaryEntry] = useState(''); // This holds the current text input from the data, its state is updated when submit is clicked
   const [entries, setEntries] = useState([]); // This is an array to store the data
   const [isEditing, setIsEditing] = useState(false); // This is boolean data type which determines whether an existing entry is being edited
@@ -11,6 +15,10 @@ const Textbox = () => {
   const handleDiarySubmit = (event) => {
     event.preventDefault(); // Prevent default form submission
     
+
+   
+
+
 
     //defining the date and the time
     const now = new Date();
@@ -49,6 +57,8 @@ const Textbox = () => {
     const updatedEntries = entries.filter((entry, i) => i !== index);
     setEntries(updatedEntries);
   };
+
+
 
   return (
     // is the output of the form entry:
