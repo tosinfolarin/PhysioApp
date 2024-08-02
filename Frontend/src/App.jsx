@@ -52,9 +52,10 @@ import Cancer from './components/Cancer';
 import DVT from './components/DVT';
 import Cellulitis from './components/Cellulitis';
 import Rheumatism from './components/Rheumatism';
-
-
 import Details from './components/MyDetails';
+
+
+import Textbox from './components/Textbox';
 import Test from './components/Test';
 
 
@@ -119,6 +120,7 @@ function App() {
 
         <Route path="/MyDetails" element={<Details/>}/>
         <Route path="/Test" element={<Test/>}/>
+        <Route path="/Textbox" element={<Textbox/>}/>
 
 
       </Routes>

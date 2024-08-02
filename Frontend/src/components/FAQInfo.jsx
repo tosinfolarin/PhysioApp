@@ -31,7 +31,7 @@ const FAQinfo = () => {
                 <br/><br/>
                 Recovery times can vary widely from person to person, with no gold standard for how long it will take to get better. 
                 The nature and severity of the injury, age, general health, diet, and lifestyle all play significant roles. Younger and healthier individuals tend to recover faster, while compliance with physiotherapy exercises and treatment plans is crucial for a quicker recovery. Acute injuries may improve within a few weeks, whereas chronic conditions or severe injuries can take several months. 
-                Every recovery journey is unique, and we'll support you every step of the way.
+                Every recovery journey is unique.
                 <br/>
                 
             </div>

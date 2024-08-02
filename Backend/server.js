@@ -5,7 +5,6 @@ const mysql = require('mysql')
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
-
 const jwt = require("jsonwebtoken")
 
 // Create express app

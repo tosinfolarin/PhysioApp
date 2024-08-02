@@ -104,94 +104,6 @@ nav .menu span {
 
 
 
-/* .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: darkblue;
-} */
-
-/* .navbar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 20px; 
-}
-
-.links {
-  display: flex;
-  gap: 15px; 
-}
-
-.links a {
-  text-decoration: none;
-  color: #00008b; 
-  font-weight: bold;
-}
-
-.links a:hover {
-  color: #ff0000; 
-} */
-
-
-/* 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-
-
-
 
 
 .container {
@@ -236,7 +148,7 @@ button:focus-visible {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  background-color: #0693E3;
+  background-color: #8babf7;
   color: white;
   text-align: center; /* Center-align text within the div */
 }
@@ -261,9 +173,10 @@ button:focus-visible {
 .red-flag-info-container {
   width: 80.2%; /* Adjust this value to control the width of the container */
   margin: 0 auto; /* Center the container horizontally */
+  color: white;
   padding: 20px; /* Add padding for space inside the container */
   text-align: center; /* Center-align the text */
-  background-color: #C9EAFC; /* Optional: Add a background color */
+  background-color: #0056b3; /* Optional: Add a background color */
 
 }
 
@@ -651,29 +564,54 @@ button:focus-visible {
   padding: 5px;
   border-radius: 8px;
   margin-top: 20px;
-  background-color: rgb(143, 158, 158);
+  color: white;
+  background-color: #5789fe;
   height: 10rem;
+
 }
 
-.profile-main-content {
-  width: 80%;
-  padding-left: 20px;
+
+.diary-submit {
+  background-color: #000000;
+  padding: 10px;
+  color: white;
+  align-content: left;
+}
+.diary-submit:hover {
+  background-color: #004dc0;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
 }
 
-.diary-text {
-  align-self: start;  
+.LogOutButton {
+
+  padding: 8px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color:#888;
+  color: white;
+}
+
+
+.LogOutButton:hover {
+
+  background-color: #ff0000;
+  cursor: pointer;
 }
 
 .user-diary {
-  width: 100%;
+  width: 75%;
   height: 100%;
   border: 2px solid black;
+  padding: 5px;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  margin-left: auto;
   background-color: #5789fe;
   color: white;
+  
 }
+
 
 
 .user-diary form {
@@ -682,6 +620,28 @@ button:focus-visible {
   height: 30%;
   width: 100%;
 }
+
+
+
+.output .entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.output .entry p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.output .entry button {
+  margin-left: 10px;
+}
+
+
+
+
+
 
 
 .myDetailsButton {
@@ -701,21 +661,6 @@ button:focus-visible {
 }
 
 
-.LogOutButton {
-
-  padding: 8px;
-  margin: 10px;
-  border-radius: 8px;
-  background-color: #f67a7a;
-  color: white;
-}
-
-
-.LogOutButton:hover {
-
-  background-color: #ff0000;
-  cursor: pointer;
-}
 
 
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import Textbox from './Textbox';
 
 
 
@@ -92,22 +92,11 @@ const Profile = () => {
 
             <button className="LogOutButton" onClick={handleLogOut}> Log out</button>
           </div>
-          <div className="profile-main-content">
-          <div className="user-diary">
           
+          <div className='user-diary'>
+            <Textbox/>
+          </div>
 
-            <form onSubmit={handleDiarySubmit}>
-              <textarea
-                value={diaryEntry} // Bind textarea value to state
-                onChange={handleDiaryChange} // Update state on change
-                placeholder="Document your progress here..."
-                rows="20"
-                cols="100"
-              />
-              <button type="submit">Submit Diary Entry</button>
-            </form>
-          </div>
-          </div>
         </div>
       </div>
     );
