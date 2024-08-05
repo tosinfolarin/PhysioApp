@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-axios.defaults.withCredentials = true;
+
 
 const Textbox = () => {
 
