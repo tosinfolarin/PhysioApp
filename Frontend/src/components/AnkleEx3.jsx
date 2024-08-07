@@ -20,7 +20,7 @@ const AnkleExercises3 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="1"
+                            src="https://www.youtube.com/embed/rsKbW5gZ8G8"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -30,7 +30,7 @@ const AnkleExercises3 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="2"
+                            src="https://www.youtube.com/embed/1esX_XhdTcc"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

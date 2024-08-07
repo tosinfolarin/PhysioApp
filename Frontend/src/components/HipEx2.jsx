@@ -13,7 +13,7 @@ const HipExercises2 = () => {
 
         <div className="exercise-container">
         <header className="header">
-            <h1>Level 1</h1>
+            <h1>Level 2</h1>
         </header>
         <div className="exercise-grid">
         <div className="exercise-item">
