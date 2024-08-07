@@ -86,7 +86,8 @@ app.post('/api/Sign-Up', (req, res) => {
 // This is an api which checks whether the login credentials entered are the same as what is in the database
 app.post('/api/Sign-in', (req, res) => {
     const sql = "SELECT * FROM Patients WHERE Email = ? and Password = ?";
-    db.query(sql, [req.body.email, req.body.password, req.body.password, req.body.preferredName, req.body.firstName, req.body.lastName, req.body.pastMedHistory], (err, result) => {
+    db.query(sql, [req.body.email, req.body.password, req.body.password, req.body.preferredName, req.body.firstName, req.body.lastName, 
+        req.body.pastMedHistory], (err, result) => {
         if(err) return res.json({Message: "Error inside server"});
 
         // This checks if a record exists. If it does login = true, if not login = false
@@ -94,10 +95,10 @@ app.post('/api/Sign-in', (req, res) => {
 
             
             req.session.email = result[0].Email; // This assigns an email to a session
-            req.session.preferredName  = result[0].PreferredName;
-            req.session.firstName  = result[0].FirstName;
-            req.session.lastName  = result[0].LastName;
-            req.session.pastMedHistory  = result[0].PastMedHistory;
+            req.session.preferredName  = result[0].PreferredName; // This assigns a preferred name to a session
+            req.session.firstName  = result[0].FirstName; // This assigns a first name to a session
+            req.session.lastName  = result[0].LastName; // This assigns a last name to a session
+            req.session.pastMedHistory  = result[0].PastMedHistory; // This contains the PMH details of a session
             
             const email = result[0].email;
             const token = jwt.sign({email}, "our-jsonwebtoken-secret-key", {expiresIn: '1d'} )
