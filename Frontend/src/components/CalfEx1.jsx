@@ -63,7 +63,7 @@ const CalfExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="4"
+                            src="https://www.youtube.com/embed/3THwEvNtW8I"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -73,7 +73,7 @@ const CalfExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="5"
+                            src="https://www.youtube.com/embed/rzeTc3fyX_Y"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

@@ -20,7 +20,7 @@ const NeckExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="1"
+                            src="https://www.youtube.com/embed/WnKcq1Uh8m4"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -30,7 +30,7 @@ const NeckExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="2"
+                            src="https://www.youtube.com/embed/E5ad2c2z_Bc"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -40,7 +40,7 @@ const NeckExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="3"
+                            src="https://www.youtube.com/embed/ydbMq0wPirw"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -53,7 +53,7 @@ const NeckExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="4"
+                            src="https://www.youtube.com/embed/XR5sqxPmPUc"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -63,7 +63,7 @@ const NeckExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="5"
+                            src="https://www.youtube.com/embed/imLiEN0Kf14"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -73,7 +73,7 @@ const NeckExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="6"
+                            src="https://www.youtube.com/embed/mYfaLEZhzHM"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

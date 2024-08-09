@@ -40,7 +40,7 @@ const AnkleExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="vid"
+                            src="https://www.youtube.com/embed/LZ0YOtbSgU8"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -53,7 +53,7 @@ const AnkleExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="3"
+                            src="https://www.youtube.com/embed/lD6lqjAh57w"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -63,7 +63,7 @@ const AnkleExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="4"
+                            src="https://www.youtube.com/embed/HFNECPgOGI8"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -73,7 +73,7 @@ const AnkleExercises = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="vid"
+                            src="https://www.youtube.com/embed/pgoh-1i6ut0"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
