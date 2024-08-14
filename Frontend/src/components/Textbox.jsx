@@ -27,7 +27,9 @@ const Textbox = () => {
       .catch(err => console.log(err));
   };
 
-  const formatDateTime = (date) => {
+  //This function formats the date and time so that it will return YYYY-MM-DD HH:MM
+  const formatDateTime = (isoString) => {
+    const date = new Date(isoString);
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed, so add 1
     const day = String(date.getDate()).padStart(2, '0');
@@ -36,6 +38,7 @@ const Textbox = () => {
   
     return `${year}-${month}-${day} ${hours}:${minutes}`;
   };
+  
   
 
   // The handleDiarySubmit function handles the submission to either add a new entry or update the existing one
@@ -48,7 +51,7 @@ const Textbox = () => {
     const now = new Date();
     const Timestamp = formatDateTime(now);
 
-    
+
     if (isEditing) {
       // Update the existing entry without changing the timestamp
       const updatedEntries = [...entries];
@@ -84,12 +87,37 @@ const Textbox = () => {
   };
 
   // Defines the function to delete entries when required
-  const handleDelete = (index) => {
-    const updatedEntries = entries.filter((entry, i) => i !== index);
-    setEntries(updatedEntries);
+  // const handleDelete = (index) => {
+  //   const updatedEntries = entries.filter((entry, i) => i !== index);
+  //   setEntries(updatedEntries);
+  // };
+
+  // const handleDatabaseDelete = (noteID) => {
+  //   axios.delete(`http://localhost:8080/api/delete/Note`, { data: { NoteID: noteID } })
+  //     .then(res => {
+  //       if (res.data.Status === "Success") {
+  //         setEntries(entries.filter(entry => entry.NoteID !== noteID));
+  //       } else {
+  //         alert("Error deleting note");
+  //       }
+  //     })
+  //     .catch(err => console.log(err));
+  // };
+
+  
+  const handleDelete = (noteID, index) => {
+    axios.delete('http://localhost:8080/api/delete/Note', { data: { NoteID: noteID } })
+      .then(res => {
+        if (res.data.Status === "Success") {
+          // Update the frontend after successful deletion from the database
+          const updatedEntries = entries.filter((entry, i) => i !== index);
+          setEntries(updatedEntries);
+        } else {
+          alert("Error deleting note");
+        }
+      })
+      .catch(err => console.log(err));
   };
-
-
 
   return (
     // Output of the form entry:
@@ -98,9 +126,9 @@ const Textbox = () => {
         {entries.map((entry, index) => (
           <div key={index} className="entry">
             <p>{entry.Note}</p>
-            <p>{entry.Timestamp}</p>
+            <p>{formatDateTime(entry.Timestamp)}</p>
             <button type="button" onClick={() => handleEdit(index)}>Edit</button>
-            <button type="button" onClick={() => handleDelete(index)}>Delete</button>
+            <button type="button" onClick={() => handleDelete(entry.NoteID, index)}>Delete</button>
           </div>
         ))}
       </div>

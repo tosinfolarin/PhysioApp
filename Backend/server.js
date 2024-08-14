@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors({
     origin: ["http://localhost:5173"],
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET", "DELETE"],
     credentials: true
 })); 
 app.use(express.json());
@@ -221,7 +221,32 @@ app.post('/api/post/Note', (req, res) => {
 // 'UPDATE Notes SET note = ?  WHERE NoteID = ?;'
 
 //To delete a note
-// 'DELETE FROM Notes WHERE NoteID = ?;'
+// 'DELETE FROM Notes WHERE NoteID = ? (SELECT PatientID FROM Patients WHERE Email = ?);'
+app.delete('/api/delete/Note', (req, res) => {
+    const { NoteID } = req.body;
+    const userEmail = req.session.email;
+  
+    if (!userEmail) {
+      return res.status(401).send('User not authenticated');
+    }
+  
+    const query = `
+      DELETE FROM Notes 
+      WHERE NoteID = ? 
+      AND PatientID = (SELECT PatientID FROM Patients WHERE Email = ?)
+    `;
+  
+    db.query(query, [NoteID, userEmail], (err, result) => {
+      if (err) {
+        console.error('Error deleting note from the database:', err);
+        return res.status(500).send('Error deleting note from the database');
+      }
+      res.status(200).json({ Status: "Success" });
+    });
+  });
+
+
+
 
 
 
