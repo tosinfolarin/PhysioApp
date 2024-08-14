@@ -169,23 +169,59 @@ app.get('/api/LogOut', (req, res) => {
 })
 
 
-// This sends the information from the notes input to the diary
-app.post('/api/Notes', (req, res) => {
-    const { text, timestamp } = req.body;
-  
-    const query = 'INSERT INTO Notes (text, timestamp) VALUES (?, ?)';
-    db.query(query, [text, timestamp], (err, result) => {
+
+// This gets the current notes from the database depending on the email
+app.get('/api/get/Notes', (req, res) => {
+    // As 'email' is stored in session when user logs in we want to request session email to get the result
+    const userEmail = req.session.email; 
+    if (!userEmail) {
+      return res.status(401).send('User not authenticated');
+    }
+    else {
+        console.log("Retrieving data from Notes table")
+    }
+
+    const query = 'SELECT Note, Timestamp FROM Notes WHERE PatientID = (SELECT PatientID FROM Patients WHERE Email = ? )';
+    db.query(query, [userEmail], (err, result) => {
       if (err) {
-        console.error('Error inserting data into the database:', err);
-        res.status(500).send('Error inserting data into the database');
+        console.error('Error fetching notes from the database:', err);
+        res.status(500).send('Error fetching notes from the database');
         return;
       }
-      res.status(200).send('Diary entry saved successfully');
+      res.status(200).json({ Status: "Success", data: result });
+    });
+});
+
+
+//This  will post any information from the frontend into the Notes table
+app.post('/api/post/Note', (req, res) => {
+    const { Note, Timestamp } = req.body;
+    const userEmail = req.session.email;
+  
+    if (!userEmail) {
+      return res.status(401).send('User not authenticated');
+    }
+  
+    const query = `
+      INSERT INTO Notes (PatientID, Note, Timestamp)
+      VALUES ((SELECT PatientID FROM Patients WHERE Email = ?), ?, ?)
+    `;
+    db.query(query, [userEmail, Note, Timestamp], (err, result) => {
+      if (err) {
+        console.error('Error saving note to the database:', err);
+        res.status(500).send('Error saving note to the database');
+        return;
+      }
+      res.status(200).json({ Status: "Success" });
     });
   });
 
 
+//To edit a note
+// 'UPDATE Notes SET note = ?  WHERE NoteID = ?;'
 
+//To delete a note
+// 'DELETE FROM Notes WHERE NoteID = ?;'
 
 
 
