@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cors({
     origin: ["http://localhost:5173"],
-    methods: ["POST", "GET", "DELETE"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 })); 
 app.use(express.json());
@@ -181,7 +181,7 @@ app.get('/api/get/Notes', (req, res) => {
         console.log("Retrieving data from Notes table")
     }
 
-    const query = 'SELECT Note, Timestamp FROM Notes WHERE PatientID = (SELECT PatientID FROM Patients WHERE Email = ? )';
+    const query = 'SELECT NoteID, Note, Timestamp FROM Notes WHERE PatientID = (SELECT PatientID FROM Patients WHERE Email = ? )';
     db.query(query, [userEmail], (err, result) => {
       if (err) {
         console.error('Error fetching notes from the database:', err);
@@ -214,40 +214,80 @@ app.post('/api/post/Note', (req, res) => {
       }
       res.status(200).json({ Status: "Success" });
     });
-  });
+});
 
 
-//To edit a note
-// 'UPDATE Notes SET note = ?  WHERE NoteID = ?;'
 
-//To delete a note
-// 'DELETE FROM Notes WHERE NoteID = ? (SELECT PatientID FROM Patients WHERE Email = ?);'
+
+// This edits the notes in the patients journal 
+app.put('/api/edit/Note', (req, res) => {
+    const { NoteID, newNoteContent } = req.body;
+    const userEmail = req.session.email;
+
+    if (!userEmail) {
+        return res.status(401).send('User not authenticated');
+    }
+
+    const query = `
+        UPDATE Notes 
+        SET Note = ?
+        WHERE NoteID = ? 
+        AND PatientID = (SELECT PatientID FROM Patients WHERE Email = ?)
+    `;
+
+    db.query(query, [newNoteContent, NoteID, userEmail], (err, result) => {
+        if (err) {
+            console.error('Error editing note in the database:', err);
+            return res.status(500).send('Error editing note in the database');
+        }
+
+        if (result.affectedRows === 0) {
+            return res.status(404).send('Note not found or not authorized');
+        }
+
+        res.status(200).json({ Status: "Success" });
+    });
+});
+
+
+
+//This deletes a note from the patients Journal
 app.delete('/api/delete/Note', (req, res) => {
+    console.log("Delete request received for NoteID:", req.body.NoteID);
     const { NoteID } = req.body;
     const userEmail = req.session.email;
-  
+
     if (!userEmail) {
-      return res.status(401).send('User not authenticated');
+        return res.status(401).send('User not authenticated');
     }
-  
+
+    // Log the NoteID and userEmail for debugging
+    console.log('NoteID:', NoteID, 'User Email:', userEmail);
+
     const query = `
       DELETE FROM Notes 
       WHERE NoteID = ? 
       AND PatientID = (SELECT PatientID FROM Patients WHERE Email = ?)
     `;
-  
+
     db.query(query, [NoteID, userEmail], (err, result) => {
-      if (err) {
-        console.error('Error deleting note from the database:', err);
-        return res.status(500).send('Error deleting note from the database');
-      }
-      res.status(200).json({ Status: "Success" });
+        if (err) {
+            console.error('Error deleting note from the database:', err);
+            return res.status(500).send('Error deleting note from the database');
+        }
+
+        // Check if any rows were affected (i.e., if the note was deleted)
+        if (result.affectedRows === 0) {
+            return res.status(404).send('Note not found or not authorized');
+        }
+
+        console.log('Note deleted successfully');
+        res.status(200).json({ Status: "Success" });
     });
-  });
+});
 
 
-
-
+  
 
 
 

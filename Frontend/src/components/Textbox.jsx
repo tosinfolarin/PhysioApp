@@ -44,23 +44,36 @@ const Textbox = () => {
   // The handleDiarySubmit function handles the submission to either add a new entry or update the existing one
   const handleDiarySubmit = (event) => {
     event.preventDefault(); // Prevent default form submission
-
+  
     // Define the date and the time
-    // const now = new Date();
-    // const Timestamp = `${now.toLocaleDateString()} ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
     const now = new Date();
     const Timestamp = formatDateTime(now);
-
-
+  
     if (isEditing) {
-      // Update the existing entry without changing the timestamp
-      const updatedEntries = [...entries];
-      updatedEntries[currentIndex].Note = diaryEntry;
-      setEntries(updatedEntries);
-      setIsEditing(false);
-      setCurrentIndex(null);
+      // Updates the existing entry in the backend
+      // This function holds the value of the the updated note entry
+      // The NoteID is assigned to the edited note
+      const updatedEntry = { NoteID: entries[currentIndex].NoteID, newNoteContent: diaryEntry };
+  
+      axios.put('http://localhost:8080/api/edit/Note', updatedEntry)
+        .then(res => {
+          if (res.data.Status === "Success") {
+            const updatedEntries = [...entries];
+            updatedEntries[currentIndex].Note = diaryEntry;
+
+          
+
+            setEntries(updatedEntries);
+            setIsEditing(false);
+            setCurrentIndex(null);
+          } else {
+            alert("Error updating note");
+          }
+        })
+        .catch(err => console.error('Error updating note:', err));
     } else {
       const newEntry = { Note: diaryEntry, Timestamp };
+      console.log(newEntry)
       axios.post('http://localhost:8080/api/post/Note', newEntry)
         .then(res => {
           if (res.data.Status === "Success") {
@@ -70,7 +83,8 @@ const Textbox = () => {
           }
         })
         .catch(err => console.error('Error saving note:', err));
-  }
+    }
+  
     setDiaryEntry(''); // Clears the textarea after submission
   };
 
@@ -81,30 +95,12 @@ const Textbox = () => {
 
   // This defines the handle edit
   const handleEdit = (index) => {
-    setDiaryEntry(entries[index].notes);
+    setDiaryEntry(entries[index].Note); // Update this line to use 'Note' instead of 'notes'
     setIsEditing(true);
     setCurrentIndex(index);
   };
 
-  // Defines the function to delete entries when required
-  // const handleDelete = (index) => {
-  //   const updatedEntries = entries.filter((entry, i) => i !== index);
-  //   setEntries(updatedEntries);
-  // };
 
-  // const handleDatabaseDelete = (noteID) => {
-  //   axios.delete(`http://localhost:8080/api/delete/Note`, { data: { NoteID: noteID } })
-  //     .then(res => {
-  //       if (res.data.Status === "Success") {
-  //         setEntries(entries.filter(entry => entry.NoteID !== noteID));
-  //       } else {
-  //         alert("Error deleting note");
-  //       }
-  //     })
-  //     .catch(err => console.log(err));
-  // };
-
-  
   const handleDelete = (noteID, index) => {
     axios.delete('http://localhost:8080/api/delete/Note', { data: { NoteID: noteID } })
       .then(res => {
@@ -118,6 +114,7 @@ const Textbox = () => {
       })
       .catch(err => console.log(err));
   };
+
 
   return (
     // Output of the form entry:

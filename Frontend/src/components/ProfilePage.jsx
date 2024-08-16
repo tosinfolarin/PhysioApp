@@ -71,7 +71,7 @@ const Profile = () => {
     return (
       <div className="profile-page">
         <div className="profile-header">
-          <h1> {name}'s Profile</h1>
+          <h1> {name}'s Journal</h1>
         </div>
         <div className="profile-container">
           <div className="profile-sidebar">

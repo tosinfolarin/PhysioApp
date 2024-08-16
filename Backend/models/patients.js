@@ -39,9 +39,3 @@ class Patients {
     }
   }
 
-
-
-//   notes: this.consultationID,
-//   consultationDate: this.consultationDate,
-//   patient: this.patient.getPatientInfo(),
-//   therapist: this.therapist.getTherapistInfo()

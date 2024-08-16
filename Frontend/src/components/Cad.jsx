@@ -29,7 +29,12 @@ const CAD = () => {
                 <tr>
                     <td>CAD is a reference to a number of potential early signs of artery Dysfunction</td>
                     <td>Dizziness, Double Vision (Diplopia), Swallowing Difficulties (Dysphagia), Speach Difficulties (Dysarthria), Nausea, Fascial Numbness, Staggering eyes (Nystagmus)</td>
-                    <td>Past history of trauma to cervical spine / cervical vessels, History of migraine-type headache <br></br>High blood pressure, High cholesterol levels, Cardiac disease, vascular disease, previous cerebrovascular accident or transient ischaemic attack,<br></br>Diabetes, Blood clotting disorders, Anticoagulant therapy, Long-term use of steroids, History of smoking, Recent infection, Immediately post-partum, Head or neck trauma</td>
+                    <td>Past history of trauma to cervical spine / cervical vessels
+                    <br></br><br></br>History of migraine-type headache 
+                    <br></br><br></br>High blood pressure, High cholesterol, 
+                    <br></br><br></br>Cardiac disease, vascular disease, previous cerebrovascular accident or transient ischaemic attack
+                    <br></br><br></br>Diabetes, Blood clotting disorders, Anticoagulant therapy
+                    <br></br><br></br>Long-term use of steroids, History of smoking, Recent infection, Immediately post-partum, Head or neck trauma</td>
                     <td>Go to A+E Immediately</td>
                 </tr>
                 </tbody>

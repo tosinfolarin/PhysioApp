@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom"
 
 
 const Details = () => {
@@ -171,9 +172,18 @@ const Details = () => {
   
             
           </form>
+
         </div>
-      </div>
+          <div>
+            <div className="too-easy-link-container">
+              <Link to="/MyProfile" className="too-easy-link">Back to my Journal</Link>
+            </div>
+        </div>
+        </div>
+      
     );
+
+    
   };
 
 export default Details;
