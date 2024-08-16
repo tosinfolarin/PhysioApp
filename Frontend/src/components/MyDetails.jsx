@@ -52,18 +52,6 @@ const Details = () => {
       };
       console.log(formData);
       setSubmitted(true);
-  // sends information to the server taking the data from the formData dataset
-        axios.post('http://localhost:8080/api/Sign-Up', data ) // Need to crease a different endpoint for this for updating information
-        // Then stores the results and redirects the user to the sign in page
-        .then(res => 
-          {
-            console.log(res);
-            navigate('/Sign-in')
-        })
-        .catch(err => console.log(err));
-  
-      // navigate("/Sign-in"); // Navigate to sign in page
-  
   
     };
     
