@@ -20,7 +20,7 @@ const HipExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="vid"
+                            src="https://www.youtube.com/embed/cDLBoUxGAmU"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

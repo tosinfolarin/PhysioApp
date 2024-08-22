@@ -1,4 +1,3 @@
-
 const session = require("express-session");
 const express = require("express");
 const mysql = require('mysql')
@@ -138,8 +137,6 @@ const verifyUser =  (req, res, next) => {
 }
 
 
-
-
 // This is the backend route for MyProfile once the user logs in
 app.get('/api/MyProfile', verifyUser, (req, res) => {
     // if the user is logged in, this will return the information of the user
@@ -160,7 +157,6 @@ app.get('/api/MyProfile', verifyUser, (req, res) => {
 
 
 // This is a route to log the user out by removing the cookies of the session
-
 app.get('/api/LogOut', (req, res) => {
     res.clearCookie('token');
     console.log('user has logged out Successfully');
@@ -240,11 +236,9 @@ app.put('/api/edit/Note', (req, res) => {
             console.error('Error editing note in the database:', err);
             return res.status(500).send('Error editing note in the database');
         }
-
         if (result.affectedRows === 0) {
             return res.status(404).send('Note not found or not authorized');
         }
-
         res.status(200).json({ Status: "Success" });
     });
 });
@@ -260,22 +254,16 @@ app.delete('/api/delete/Note', (req, res) => {
     if (!userEmail) {
         return res.status(401).send('User not authenticated');
     }
-
-    // Log the NoteID and userEmail for debugging
-    console.log('NoteID:', NoteID, 'User Email:', userEmail);
-
     const query = `
       DELETE FROM Notes 
       WHERE NoteID = ? 
       AND PatientID = (SELECT PatientID FROM Patients WHERE Email = ?)
     `;
-
     db.query(query, [NoteID, userEmail], (err, result) => {
         if (err) {
             console.error('Error deleting note from the database:', err);
             return res.status(500).send('Error deleting note from the database');
         }
-
         // Check if any rows were affected (i.e., if the note was deleted)
         if (result.affectedRows === 0) {
             return res.status(404).send('Note not found or not authorized');
