@@ -30,7 +30,7 @@ const KneeExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="vid"
+                            src="https://www.youtube.com/embed/t6BOZqBny-Q"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -40,7 +40,7 @@ const KneeExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/9dXX7i88Vpo"
+                            src="https://www.youtube.com/embed/QEILIo9Kzlw"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -53,7 +53,7 @@ const KneeExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="vid"
+                            src="https://www.youtube.com/embed/89vspUUr4CQ"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -63,7 +63,7 @@ const KneeExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="vid"
+                            src="https://www.youtube.com/embed/4T2P_-MV9g0"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -73,7 +73,7 @@ const KneeExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="vid"
+                            src="https://www.youtube.com/embed/dFnk1abXQP0"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
