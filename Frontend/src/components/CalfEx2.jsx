@@ -20,7 +20,7 @@ const CalfExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="1"
+                            src="https://www.youtube.com/embed/QEILIo9Kzlw"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -30,7 +30,7 @@ const CalfExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="2"
+                            src="https://www.youtube.com/embed/8W8XRJcSZOc"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -40,7 +40,7 @@ const CalfExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="3"
+                            src="https://www.youtube.com/embed/1Sx3_b3lcBA"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -73,7 +73,7 @@ const CalfExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="6"
+                            src="https://www.youtube.com/embed/Ovzq9hlKOSk"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen

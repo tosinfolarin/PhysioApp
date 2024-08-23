@@ -15,15 +15,70 @@ const ThighExercises3 = () => {
         <header className="header">
             <h1>Level 3</h1>
         </header>
-        <div class="exercise-grid">
-            <div className="exercise-item">Exercise Video 1</div>
-            <div className="exercise-item">Exercise Video 2</div>
-            <div className="exercise-item">Exercise Video 3</div>
+        <div className="exercise-grid">
+        <div className="exercise-item">
+        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/SHu4YRxc228"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+        <div className="exercise-item">
+        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/mH631V-5K6s"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+        <div className="exercise-item">
+        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/UHQt49fxraQ"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
         </div>
-        <div class="exercise-grid">
-            <div className="exercise-item">Exercise Video 4 </div>
-            <div className="exercise-item">Exercise Video 5</div>
-            <div className="exercise-item">Exercise Video 6</div>
+        </div>
+        <div className="exercise-grid">
+            
+        <div className="exercise-item">
+        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/kUpdWAliuA0"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+        </div>
+        <div className="exercise-item">
+        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/0MWNcbmg_X8"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+        </div>
+        <div className="exercise-item">
+        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/q8u3rP2kPLY"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+        </div>
         </div>
         </div> 
         
