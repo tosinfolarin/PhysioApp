@@ -13,7 +13,7 @@ const LowerExercises = () => {
 
         <div className="exercise-container">
         <header className="header">
-            <h1>Sciatica</h1>
+            <h1>Sciatica (leg pain/ pins and needles or numbness/ burning) </h1>
         </header>
         <div className="exercise-grid">
         <div className="exercise-item">
@@ -84,7 +84,7 @@ const LowerExercises = () => {
 
 
         <div className="too-easy-link-container">
-            <Link to="/lower-limb-paresthesia/level-2" className="too-easy-link">Too Easy</Link>
+            <Link to="/lower-limb-paresthesia/level-2" className="too-easy-link">Different Symptoms</Link>
         </div>
         
         </div> 

@@ -85,7 +85,7 @@ const LowerExercises3 = () => {
         
         
         <div className="too-hard-link-container">
-            <Link to="/lower-limb-paresthesia/level-2" className="too-hard-link"> Too Hard</Link>
+            <Link to="/lower-limb-paresthesia/level-2" className="too-hard-link"> Previous Exercises </Link>
         </div>
 
 
