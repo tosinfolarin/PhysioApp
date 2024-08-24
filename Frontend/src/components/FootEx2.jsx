@@ -53,7 +53,7 @@ const FootExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="4"
+                            src="https://www.youtube.com/embed/ZLxyh_PEstI"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
@@ -63,7 +63,7 @@ const FootExercises2 = () => {
         <iframe
                             width="100%"
                             height="100%"
-                            src="5"
+                            src="https://www.youtube.com/embed/UoMSMdMKfBY"
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
