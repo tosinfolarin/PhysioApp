@@ -1,10 +1,10 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import FAQs from "./FAQDrop";
 
 const FAQ = () => {
     return ( 
         <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <FAQs/>
       
         </div> );

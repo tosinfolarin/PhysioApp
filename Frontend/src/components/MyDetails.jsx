@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -61,9 +61,9 @@ const Details = () => {
   
     return (
       <div>
-        <div>
+        {/* <div>
           <Navbar />
-        </div>
+        </div> */}
         <div className="Sign up">
           <form onSubmit={handleSubmit(submitData)} className="SignUp">
             <h1>My Details</h1>

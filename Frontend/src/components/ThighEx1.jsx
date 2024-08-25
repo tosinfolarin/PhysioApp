@@ -1,10 +1,10 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import MyInjury from "./myInjuryButton";
 const ThighExercises = () => {
     return ( 
         <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <MyInjury/>
 
         

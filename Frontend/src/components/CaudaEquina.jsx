@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import FlagNav from "./FlagNav";
 
@@ -6,7 +6,7 @@ const CaudaEquina = () => {
     return ( 
     
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <FlagNav/>
         <div className="table-container">
             <table className="custom-table">

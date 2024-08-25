@@ -1,11 +1,11 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import Profile from "./ProfilePage";
 
 
 const MyProfile = () => {
     return ( 
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Profile/>
        
     </div> );

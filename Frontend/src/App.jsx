@@ -1,11 +1,16 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
 import Home from './components/Homepage';
 import Injuries from './components/InjuriesPage';
 import FAQs from './components/FAQPage';
 import MyProfile from './components/MyProfilePage';
 import SignIn from './components/SigningInPage';
 import SignUp from './components/SigningUpPage';
+
 import NeckExercises from './components/NeckEx1';
 import NeckExercises2 from './components/NeckEx2';
 import NeckExercises3 from './components/NeckEx3';
@@ -42,6 +47,7 @@ import LowerExercises3 from './components/LowerEx3';
 import UpperExercises from './components/UpperEx1';
 import UpperExercises2 from './components/UpperEx2';
 import UpperExercises3 from './components/UpperEx3';
+
 import CAD from './components/Cad';
 import Myelopathy from './components/Myelopathy';
 import CompartmentSyndrome from './components/CompartmentSyndrome';
@@ -52,18 +58,35 @@ import Cancer from './components/Cancer';
 import DVT from './components/DVT';
 import Cellulitis from './components/Cellulitis';
 import Rheumatism from './components/Rheumatism';
+
 import Details from './components/MyDetails';
-
-
 import Textbox from './components/Textbox';
 import Test from './components/Test';
-
+import Navbar from './components/Navbar';
+import ProfileNav from './components/ProfileNav';
 
 
 function App() {
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check if the user is logged in
+    axios.get('http://localhost:8080/api/MyProfile')
+      .then(res => {
+        if (res.data.valid) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
+      })
+      .catch(err => console.log(err));
+  }, []);
+
   return (
     <Router>
+      {isLoggedIn ? <ProfileNav /> : <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/injuries" element={<Injuries/>} />
@@ -117,12 +140,10 @@ function App() {
         <Route path="/dvt" element={<DVT/>}/>
         <Route path="/cellulitis" element={<Cellulitis/>}/>
         <Route path="/rheumatoid-arthritis" element={<Rheumatism/>}/>
-
         <Route path="/MyDetails" element={<Details/>}/>
         <Route path="/Test" element={<Test/>}/>
         <Route path="/Textbox" element={<Textbox/>}/>
-
-
+      
       </Routes>
     </Router>
   );

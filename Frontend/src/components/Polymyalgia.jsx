@@ -1,4 +1,4 @@
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import { Link} from "react-router-dom";
 import FlagNav from "./FlagNav";
 
@@ -6,7 +6,7 @@ const Polymyalgia = () => {
     return ( 
     
     <div>
-        <Navbar/>
+        {/* <Navbar/> */}
         <FlagNav/>
         <div className="table-container">
             <table className="custom-table">
@@ -28,7 +28,7 @@ const Polymyalgia = () => {
                     <br></br><br></br>Loss of appetite
                     <br></br><br></br>Weight loss
                     <br></br><br></br>Depression
-                    <br></br><br></br>Morning Stiffness >45 minutes</td>
+                    <br></br><br></br>Morning Stiffness more than 45 minutes</td>
                     <td>There is no known true cause of PMR however, it is thought to be an inflammatory condition which may stem from environmental triggers such as a virus
                     <br></br><br></br>Certain genes may also predispose you to development of this condition.
                     </td>
