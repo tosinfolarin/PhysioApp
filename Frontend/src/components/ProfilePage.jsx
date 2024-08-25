@@ -44,6 +44,7 @@ const Profile = () => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [pastMedHistory, setPastMedHistory] = useState('')
+  const [painScore, setPainScore] = useState('')
 
   const navigate = useNavigate()
   useEffect(()=> {
@@ -56,6 +57,7 @@ const Profile = () => {
         setFirstName(res.data.firstName)
         setLastName(res.data.lastName)
         setPastMedHistory(res.data.pastMedHistory)
+        setPainScore(res.data.painScore)
       } else { // This will run if the user is unable to sign in/ or the user logs out
         setAuth(false); 
         console.log('User is not signed in');
@@ -89,7 +91,8 @@ const Profile = () => {
             
             
             <div className="profile-pmh">
-            <span> Past Medical History: <br></br>{pastMedHistory} </span>
+            <span> Past Medical History: <br></br>{pastMedHistory} </span> <br></br><br></br>
+            <span> Starting Pain Score: {painScore}</span>
             </div>
 
             {/* <button className="LogOutButton" onClick={handleLogOut}> Log out</button> */}

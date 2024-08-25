@@ -2,10 +2,11 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom"
+
 
 
 const Details = () => {
@@ -46,7 +47,7 @@ const Details = () => {
         email: data.email,
         password: data.password,
         bodyPart: data.bodyPart,
-        painScale: data.painScale,
+        painScore: data.painScore,
         pastMedHistory: data.pastMedHistory,
         
       };
@@ -54,10 +55,28 @@ const Details = () => {
       setSubmitted(true);
   
     };
+
+    useEffect(()=> {
     
-  
-    
-  
+      axios.get('http://localhost:8080/api/MyProfile')
+      .then(res => { 
+        if(res.data.valid){
+          setAuth(true);
+          setName(res.data.name);
+          setFirstName(res.data.firstName)
+          setLastName(res.data.lastName)
+          setPastMedHistory(res.data.pastMedHistory)
+          setPainScore(res.data.painScore)
+        } else { // This will run if the user is unable to sign in/ or the user logs out
+          setAuth(false); 
+          console.log('User is not signed in');
+          navigate('/Sign-In');
+        }
+        
+      })
+      //if there is an error this will log the error to the console
+      .catch(err => console.log(err))
+    },[])
   
     return (
       <div>
