@@ -86,7 +86,7 @@ app.post('/api/Sign-Up', (req, res) => {
 app.post('/api/Sign-in', (req, res) => {
     const sql = "SELECT * FROM Patients WHERE Email = ? and Password = ?";
     db.query(sql, [req.body.email, req.body.password, req.body.password, req.body.preferredName, req.body.firstName, req.body.lastName, 
-        req.body.pastMedHistory, req.body.painScore], (err, result) => {
+        req.body.pastMedHistory, req.body.painScore, req.body.bodyPart, req.body.contactNumber], (err, result) => {
         if(err) return res.json({Message: "Error inside server"});
 
         // This checks if a record exists. If it does login = true, if not login = false
@@ -98,7 +98,9 @@ app.post('/api/Sign-in', (req, res) => {
             req.session.firstName  = result[0].FirstName; // This assigns a first name to a session
             req.session.lastName  = result[0].LastName; // This assigns a last name to a session
             req.session.pastMedHistory  = result[0].PastMedHistory; // This contains the PMH details of a session
-            req.session.painScore = result[0].PainScore // This assigns a painscore to the session
+            req.session.painScore = result[0].PainScore; // This assigns a painscore to the session
+            req.session.contactNumber = result[0].PhoneNo;
+            req.session.bodyPart = result[0].SymptomArea;
             
             const email = result[0].email;
             const token = jwt.sign({email}, "our-jsonwebtoken-secret-key", {expiresIn: '1d'} )
@@ -150,7 +152,10 @@ app.get('/api/MyProfile', verifyUser, (req, res) => {
             firstName: req.session.firstName,
             lastName: req.session.lastName,
             pastMedHistory: req.session.pastMedHistory,
-            painScore: req.session.painScore
+            painScore: req.session.painScore,
+            contactNumber: req.session.contactNumber,
+            bodyPart: req.session.bodyPart
+            
         })
     } else {
         return res.json({valid: false})

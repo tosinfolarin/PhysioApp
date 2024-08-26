@@ -1,4 +1,3 @@
-// import Navbar from "./Navbar";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,6 +13,16 @@ const Details = () => {
 
     const [submitted, setSubmitted] = useState(false);
     const navigate = useNavigate();
+
+    const [auth, setAuth] = useState('') // This checks whether the user is logged in or not, if the user clicks logout it is activated
+    const [name, setName] = useState('')
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [pastMedHistory, setPastMedHistory] = useState('')
+    const [painScore, setPainScore] = useState('')
+    const [contactNumber, setContactNumber] = useState ('')
+    const [email, setEmail] = useState ('')
+    const [bodyPart, setBodyPart] = useState ('')
     
   
     const schema = z.object({
@@ -50,6 +59,7 @@ const Details = () => {
         painScore: data.painScore,
         pastMedHistory: data.pastMedHistory,
         
+        
       };
       console.log(formData);
       setSubmitted(true);
@@ -65,8 +75,12 @@ const Details = () => {
           setName(res.data.name);
           setFirstName(res.data.firstName)
           setLastName(res.data.lastName)
+          setEmail(res.data.email)
           setPastMedHistory(res.data.pastMedHistory)
           setPainScore(res.data.painScore)
+          setContactNumber(res.data.contactNumber)
+          setBodyPart(res.data.bodyPart)
+          console.log(data)
         } else { // This will run if the user is unable to sign in/ or the user logs out
           setAuth(false); 
           console.log('User is not signed in');
@@ -80,24 +94,22 @@ const Details = () => {
   
     return (
       <div>
-        {/* <div>
-          <Navbar />
-        </div> */}
+        
         <div className="Sign up">
           <form onSubmit={handleSubmit(submitData)} className="SignUp">
             <h1>My Details</h1>
             
   
             
-            <label>Preferred  Name:</label>
+            <label>Preferred  Name: {name} </label>
             <input type="text" {...register("preferredName")} />
             {errors.preferredName && <span className="errorMessage">{errors.preferredName.message}</span>}
   
-            <label>Contact Number:</label>
+            <label>Contact Number: {contactNumber} </label>
             <input type="text" {...register("contactNumber")} />
             {errors.contactNumber && <span className="errorMessage">{errors.contactNumber.message}</span>}
   
-            <label>Email:</label>
+            <label>Email: {email} </label>
             <input type="email" {...register("email")} />
             {errors.email && <span className="errorMessage">{errors.email.message}</span>}
   
@@ -105,7 +117,7 @@ const Details = () => {
             <input type="password" {...register("password")} />
             {errors.password && <span className="errorMessage">{errors.password.message}</span>}
   
-            <label>Symptoms Area:</label>
+            <label>Symptoms Area: {bodyPart} </label>
             <div>
               <input type="checkbox" id="neck" value="neck" {...register("bodyPart")} />
               <label htmlFor="neck">Neck</label>
@@ -129,7 +141,7 @@ const Details = () => {
               <label htmlFor="upperlimb">Lower Limb Pins and Needles/Numbness</label>
             </div>
   
-            <label>On a scale of 0-10, with 10 being the worst, how would you rate the severity of your symptoms?</label>
+            <label>When starting the application, you scored your pain a {painScore}/10, please feel free to update this score. </label>
             <select {...register("painScale")}>
               <option value=""></option>
               <option value="0">0</option>
@@ -145,15 +157,9 @@ const Details = () => {
               <option value="10">10</option>
             </select>
   
-            <label>Have you read the Red Flag information?</label>
-            <div>
-              <input type="radio" id="yes" value="yes" {...register("readInfo")} />
-              <label htmlFor="yes">Yes</label>
-              <input type="radio" id="no" value="no" {...register("readInfo")} />
-              <label htmlFor="no">No</label>
-            </div>
+            
   
-            <label>Please select any conditions you have a history of:</label>
+            <label>You have logged having {pastMedHistory} as part of your medical history, Feel free to edit this section.</label>
             <div>
               <input type="checkbox" id="thyroid" value="thyroid" {...register("pastMedHistory")} />
               <label htmlFor="thyroid">Thyroid</label>

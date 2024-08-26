@@ -58,3 +58,75 @@ const Test = () => {
 }
  
 export default Test;
+
+
+
+
+
+
+
+
+// import { useEffect, useState } from "react";
+// import { useNavigate, Link } from "react-router-dom";
+// import axios from "axios";
+
+// const Test = () => {
+//   const [userDetails, setUserDetails] = useState(null);
+//   const [submitted, setSubmitted] = useState(false);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     axios.get("http://localhost:8080/api/MyProfile")
+//       .then((res) => {
+//         if (res.data.valid) {
+//           setUserDetails(res.data);
+//         } else {
+//           console.log("User is not signed in");
+//           navigate("/Sign-In");
+//         }
+//       })
+//       .catch((err) => console.log(err));
+//   }, []); // No dependency array as navigate likely doesn't change frequently
+
+//   // Handle form submission (replace with your desired logic)
+//   const dataDictionary = (data) => {
+//     const formData = {
+//       preferredName: data.preferredName,
+//       contactNumber: data.contactNumber,
+//       email: data.email,
+//       password: data.password,
+//       bodyPart: data.bodyPart,
+//       painScore: data.painScore,
+//       pastMedHistory: data.pastMedHistory,
+//     };
+//     console.log(formData);
+//     setSubmitted(true);
+
+
+//   return (
+//     <div>
+//       {dataDictionary && ( // Conditionally render if userDetails exists
+//         <div>
+//           <div>
+//             Preferred Name: {dataDictionary.preferredName} <button>Edit</button>
+//             Contact Number: {dataDictionary.contactNumber} <button>Edit</button>
+//             Email: {dataDictionary.email} <button>Edit</button>
+//             Password: xxx <button>Change Password</button>
+//             Symptom Area: {dataDictionary.bodyPart} <button>Edit</button>
+//             Pain Score: {dataDictionary.painScore} <button>Enter New Pain Score</button>
+//             Past Medical History: {dataDictionary.pastMedHistory} <button>Edit</button>
+//           </div>
+//           <div>
+//             <div className="too-easy-link-container">
+//               <Link to="/MyProfile" className="too-easy-link">
+//                 Back to my Journal
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Test;

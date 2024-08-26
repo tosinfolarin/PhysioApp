@@ -23,12 +23,12 @@ const CompartmentSyndrome = () => {
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Information about what it is</td>
+                    <td>Compartment syndrome is an increase in pressure inside a muscle, which restricts blood flow and causes pain</td>
                     <td>pain in a muscle – this could feel like a burning pain or a deep ache with movement making the pain worse.
-<br></br><br></br>swelling or bulging of the muscle
-<br></br><br></br>numbness, weakness or pins and needles
-<br></br><br></br>tightness or difficulty moving the affected body part</td>
-                    <td>Information about risk factors</td>
+                        <br></br><br></br>swelling or bulging of the muscle
+                        <br></br><br></br>numbness, weakness or pins and needles
+                        <br></br><br></br>tightness or difficulty moving the affected body part</td>
+                        <td>Sudden Injuries <br></br><br></br> Repetitive impact activities <br></br><br></br> Post surgery <br></br><br></br> Blood disorders</td>
                     <td>Alert your GP Immediately</td>
                 </tr>
                 </tbody>

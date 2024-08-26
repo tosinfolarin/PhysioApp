@@ -69,6 +69,7 @@ import ProfileNav from './components/ProfileNav';
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const location = useLocation()
 
   useEffect(() => {
     // Check if the user is logged in
@@ -141,7 +142,7 @@ function App() {
         <Route path="/cellulitis" element={<Cellulitis/>}/>
         <Route path="/rheumatoid-arthritis" element={<Rheumatism/>}/>
         <Route path="/MyDetails" element={<Details/>}/>
-        <Route path="/Test" element={<Test/>}/>
+        {/* <Route path="/Test" element={<Test/>}/> */}
         <Route path="/Textbox" element={<Textbox/>}/>
       
       </Routes>
@@ -151,3 +152,22 @@ function App() {
 
 
 export default App;
+
+
+
+  
+    // const [href, setHref] = useState(window.location.href);
+    // const [navState, setNavState] = useState(false)
+  
+    // useEffect(() => {
+    //   const handlePopState = () => {
+    //     setHref(window.location.href);
+    //     setNavState(window.location.href.includes("/Sign-In") ? false : true)
+    //     console.log(window.location.href,"!!!!", window.location.href.includes("/Sign-In") ? true : false)
+    //   };
+  
+    //   window.addEventListener('navigate', handlePopState, {once: false});
+      
+    // });
+  
+    
