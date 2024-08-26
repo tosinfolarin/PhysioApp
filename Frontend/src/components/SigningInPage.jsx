@@ -9,7 +9,7 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-const SignIn = () => {
+const SignIn = ({setIsLoggedIn}) => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
 
@@ -33,7 +33,9 @@ const SignIn = () => {
     axios.post('http://localhost:8080/api/Sign-in', data)
     .then(res => {
       if(res.data.Login) {
-        navigate("/MyProfile")
+        navigate("/MyProfile");
+        setIsLoggedIn(true);
+        
       } else {
         alert("The sign in credentials are incorrect, Please Try again.")
       }

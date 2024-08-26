@@ -75,11 +75,7 @@ function App() {
     // Check if the user is logged in
     axios.get('http://localhost:8080/api/MyProfile')
       .then(res => {
-        if (res.data.valid) {
-          setIsLoggedIn(true);
-        } else {
-          setIsLoggedIn(false);
-        }
+        setIsLoggedIn(res.data.valid);
       })
       .catch(err => console.log(err));
   }, []);
@@ -93,7 +89,7 @@ function App() {
         <Route path="/injuries" element={<Injuries/>} />
         <Route path="/FAQs" element={<FAQs/>} />
         <Route path="/MyProfile" element={<MyProfile/>} />
-        <Route path="/Sign-In" element={<SignIn/>} />
+        <Route path="/Sign-In" element={<SignIn setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/Sign-Up" element={<SignUp/>} />
         <Route path="/neck-pain" element={<NeckExercises/>}/>
         <Route path="/neck-pain/level-2" element={<NeckExercises2/>}/>
@@ -171,3 +167,46 @@ export default App;
     // });
   
     
+
+
+
+
+// import './App.css'
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import MyProfile from './components/MyProfilePage';
+// import SignIn from './components/SigningInPage';
+// import SignUp from './components/SigningUpPage';
+// import Navbar from './components/Navbar';
+// import ProfileNav from './components/ProfileNav';
+
+
+// function App() {
+
+//   const [isLoggedIn, setIsLoggedIn] = useState(false);
+ 
+//   useEffect(() => {
+//     // Check if the user is logged in
+//     axios.get('http://localhost:8080/api/MyProfile')
+//       .then(res => {
+//         setIsLoggedIn(res.data.valid);
+//       })
+//       .catch(err => console.log(err));
+//   }, []);
+
+//   return (
+//     <Router>
+//       {isLoggedIn ? <ProfileNav /> : <Navbar />}
+
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/Sign-In" element={<SignIn/>} />
+//         <Route path="/Sign-Up" element={<SignUp/>} />
+//       </Routes>
+//     </Router>
+//   );
+// }
+
+
+// export default App;
