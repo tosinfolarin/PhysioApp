@@ -139,8 +139,6 @@ nav .menu span {
 
 
 
-
-
 .red-flag-page {
   display: flex;
   width: 83%;
@@ -159,10 +157,6 @@ nav .menu span {
   text-align: center; /* Center-align text within the div */
 }
 
-
-.instructor-image {
-  height: 250px;
-  width: 250px;}
 
 
 .flex-c {
@@ -186,9 +180,37 @@ nav .menu span {
 
 }
 
+@media (max-width: 768px) { /* Target small devices like iPhones */
+  .red-flag-page {
+    flex-direction: column; /* Stack elements vertically */
+    width: 100%; /* Full width */
+  }
+
+  .red-flag-intro {
+    font-size: 7px; /* Adjust font size for smaller screens */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .red-flag-info-container {
+    width: 90%; /* Reduce container width slightly */
+    padding: 15px; /* Reduce padding */
+    font-size: 10px;
+  }
+
+}
+
+
+
 
 
 /* Styles for the ScrollArea component */
+
+.redflag-prompt {
+  font-size: 25px;
+  width: fit-content; /* Adjust width to fit the content */
+  margin: 0 auto; /* Center horizontally */
+}
+
 .scroll-area {
   position: relative;
   overflow-x: auto; /* Enable horizontal scrolling */
@@ -225,8 +247,27 @@ nav .menu span {
 
 
 
+@media (max-width: 768px) { /* Target small devices like iPhones */
+  .scroll-area {
+    padding: 0.5rem; /* Reduce padding for better fit on small screens */
+  }
 
+  .scroll-area .flex {
+    padding: 0.25rem; /* Further reduce padding for content inside the scroll area */
+  }
 
+  .scroll-area::-webkit-scrollbar {
+    height: 3px; /* Further reduce scrollbar height on small screens */
+  }
+
+  .redflag-prompt {
+    font-size: 20px;
+    width: fit-content; /* Adjust width to fit the content */
+    margin: 0 auto; /* Center horizontally */
+  }
+
+ 
+}  
 
 
 
@@ -297,6 +338,37 @@ nav .menu span {
 }
 
 
+@media (max-width: 768px) {
+  .FAQ-container {
+    padding: 10px; /* Reduced padding for smaller screens */
+    margin: 10px auto; /* Smaller margin for compact display */
+  }
+
+  .FAQ-title h1 {
+    font-size: 20px; /* Smaller font size for titles */
+  }
+
+  .flex-fcontainer {
+    flex-direction: column; /* Ensure content stacks vertically */
+    padding: 0; /* Remove additional padding */
+  }
+
+  .flex-fchild {
+    margin-right: 0; /* Ensure no horizontal margin on small screens */
+    margin-bottom: 10px; /* Reduce bottom margin between items */
+  }
+
+  .f-heading {
+    font-size: 18px; /* Smaller font size for section headings */
+  }
+}
+
+
+
+
+
+
+
 /* Injuries Page Styling */
 
   .help-container {
@@ -361,19 +433,30 @@ nav .menu span {
     }
   
     .injuries {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items horizontally */
+      gap: 20px; /* Space between items */
     }
   
     .injury-item {
-      width: 80%;
-      margin-bottom: 20px; /* Adjust spacing for smaller screens */
+      width: 80%; /* Consistent width for items */
+      max-width: 400px; /* Maximum width to control box size */
+      height: 80px; /* Fixed height for uniformity */
+      display: flex;
+      flex-direction: column; /* Stack content vertically within each item */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      
     }
   
     .injury-text-container {
       width: 100%;
-      height: auto;
+      height: auto; /* Adjust based on content */
+    }
+
+    .help-tag {
+      font-size: 20px;
     }
   }
   

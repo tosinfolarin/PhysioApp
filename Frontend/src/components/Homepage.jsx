@@ -16,7 +16,7 @@ const Home = () => {
         <RedFlagInfo/>
         <RedFlags/>
 
-        <h1>Scroll For Red Flag Information</h1>
+        <h1 className="redflag-prompt">Scroll For Red Flag Information</h1>
       <ScrollAreaHorizontal />
        
     

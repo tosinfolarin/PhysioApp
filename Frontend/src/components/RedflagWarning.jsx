@@ -9,7 +9,7 @@ const RedflagWarning = () => {
           It is vital you read the information below before continuing with the exercises.</h1>
       </div>
 
-      <div className="flex-c redflags" role="region" aria-label="About Me">
+      <div className="flex-c redflags" role="region" aria-label="Physiotherapy image">
         <img src={PhysioConsultationImg} alt="Image of physiotherapy consultation" className="ConsultationPic"/>
       </div>
 

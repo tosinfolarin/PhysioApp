@@ -77,8 +77,8 @@ const ScrollAreaHorizontal = () => {
                   src={redflag.pic}
                   alt={`Photo by ${redflag.name}`}
                   className="aspect-[3/4] h-fit w-fit object-cover"
-                  width={300}
-                  height={400}
+                  width={250}
+                  height={300}
                 />
               </Link>
             </div>
