@@ -1,10 +1,8 @@
-// import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import MyInjury from "./myInjuryButton";
 const UpperBackExercises2 = () => {
     return ( 
         <div>
-        {/* <Navbar/> */}
         <MyInjury/>
 
         

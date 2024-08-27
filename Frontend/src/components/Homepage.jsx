@@ -1,4 +1,3 @@
-// import Navbar from "./Navbar";
 import MyInjury from "./myInjuryButton";
 import RedflagWarning from "./RedflagWarning";
 import RedFlagInfo from "./RedFlagInfo";
@@ -12,7 +11,6 @@ const Home = () => {
   
     return ( 
         <div>
-        {/* <Navbar/> */}
         <MyInjury/>
         <RedflagWarning/>
         <RedFlagInfo/>

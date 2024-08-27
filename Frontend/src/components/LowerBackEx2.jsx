@@ -1,16 +1,11 @@
-// import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import MyInjury from "./myInjuryButton";
 const LowerBackExercises2 = () => {
     return ( 
         <div>
-        {/* <Navbar/> */}
         <MyInjury/>
 
         
-
-
-
         <div className="exercise-container">
         <header className="header">
             <h1>Level 2</h1>

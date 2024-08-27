@@ -7,7 +7,7 @@ import axios from "axios";
 const ProfileNav = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
-    // function to handle the logout property
+    // function to handle the logout 
     const handleLogOut =  () => {
         axios.get('http://localhost:8080/api/LogOut')
         .then(res => {

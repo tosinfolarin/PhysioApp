@@ -1,4 +1,4 @@
-import PhysioConsultationImg from "../images/PhysioConsultationImg.png"; // Adjust based on your actual file structure
+import PhysioConsultationImg from "../images/PhysioConsultationImg.png"; 
 
 const RedflagWarning = () => {
   return (

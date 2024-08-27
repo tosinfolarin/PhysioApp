@@ -1,15 +1,9 @@
-// import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 import MyInjury from "./myInjuryButton";
 const HipExercises2 = () => {
     return ( 
         <div>
-        {/* <Navbar/> */}
         <MyInjury/>
-
-        
-
-
 
         <div className="exercise-container">
         <header className="header">

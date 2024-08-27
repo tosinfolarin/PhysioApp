@@ -1,12 +1,10 @@
 import FlagNav from "./FlagNav";
-// import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
 
 const CAD = () => {
     return ( 
         
     <div>
-        {/* <Navbar/> */}
         <FlagNav/>
   
 

@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Textbox from './Textbox';
-// import ProfileNav from './ProfileNav';
 
 
 axios.defaults.withCredentials = true;
@@ -27,18 +26,7 @@ const Profile = () => {
 
   const [auth, setAuth] = useState('') // This checks whether the user is logged in or not, if the user clicks logout it is activated
   
-  // // function to handle the logout property
-  // const handleLogOut =  () => {
-  //   axios.get('http://localhost:8080/api/LogOut')
-  //   .then(res => {
-  //     if(res.data.Status === "Success"){
-  //     location.reload(true);
-  //   } else {
-  //     alert("error");
-  //   }
-  //   }).catch( err => console.log(err))
-  // }
- 
+
 
   const [name, setName] = useState('')
   const [firstName, setFirstName] = useState('')
@@ -71,8 +59,6 @@ const Profile = () => {
 
 
     return (
-      // <>
-      // <ProfileNav/>
       <div className="profile-page">
         <div className="profile-header">
           <h1> {name}'s Journal</h1>
@@ -94,8 +80,6 @@ const Profile = () => {
             <span> Past Medical History: <br></br>{pastMedHistory} </span> <br></br><br></br>
             <span> Starting Pain Score: {painScore}</span>
             </div>
-
-            {/* <button className="LogOutButton" onClick={handleLogOut}> Log out</button> */}
           </div>
           
           <div className='user-diary'>
@@ -104,7 +88,6 @@ const Profile = () => {
 
         </div>
       </div>
-      // </>
       
     );
   }

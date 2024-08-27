@@ -1,4 +1,3 @@
-// import Navbar from "./Navbar";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -50,9 +49,6 @@ const SignIn = ({setIsLoggedIn}) => {
 
   return (
     <div>
-      {/* <div>
-        <Navbar />
-      </div> */}
       <div className="Sign up">
         <form onSubmit={handleSubmit(submitData)} className="SignUp">
           <h1>Sign In</h1>
