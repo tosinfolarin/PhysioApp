@@ -5,7 +5,8 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken")
-
+const bcrypt = require("bcrypt")
+const salt = 10;
 // Create express app
 const app = express();
 
@@ -55,28 +56,48 @@ app.post('/api/Sign-Up', (req, res) => {
         INSERT INTO Patients (FirstName, LastName, PreferredName, Email, Password, PhoneNo, PainScore, ReadInfo, PastMedHistory, SymptomArea) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
-    console.log(req.body)
-    const values = [
-        req.body.firstName,
-        req.body.lastName,
-        req.body.preferredName,
-        // req.body.age,
-        req.body.email,
-        req.body.password,
-        req.body.contactNumber,
-        req.body.painScale,
-        req.body.readInfo,
-        JSON.stringify(req.body.pastMedHistory), // Converts array to JSON string so that it can be inputted to the database
-        JSON.stringify(req.body.bodyPart) // Convert array to JSON string so that it can be inputted to the database
-    ];
-
-    db.query(sql, values, (err, result) => {
-        if (err) {
-            console.error('Error executing query:', err);
-            return res.status(500).json({ message: 'Error inserting data' });
+    const password = req.body.password;
+    bcrypt.hash(password.toString(), salt, (err, hash) => {
+        if(err) {
+            console.log(err);
         }
-        res.status(200).json(result);
-    });
+        const values = [
+            req.body.firstName,
+            req.body.lastName,
+            req.body.preferredName,
+            // req.body.age,
+            req.body.email,
+            hash,
+            req.body.contactNumber,
+            req.body.painScale,
+            req.body.readInfo,
+            JSON.stringify(req.body.pastMedHistory), // Converts array to JSON string so that it can be inputted to the database
+            JSON.stringify(req.body.bodyPart) // Convert array to JSON string so that it can be inputted to the database
+        ];
+
+        db.query(sql, values, (err, result) => {
+            if (err) {
+                console.error('Error executing query:', err);
+                return res.status(500).json({ message: 'Error inserting data' });
+            }
+            res.status(200).json(result);
+        });
+    })
+    // console.log(req.body)
+    // const values = [
+    //     req.body.firstName,
+    //     req.body.lastName,
+    //     req.body.preferredName,
+    //     // req.body.age,
+    //     req.body.email,
+    //     req.body.password,
+    //     req.body.contactNumber,
+    //     req.body.painScale,
+    //     req.body.readInfo,
+    //     JSON.stringify(req.body.pastMedHistory), // Converts array to JSON string so that it can be inputted to the database
+    //     JSON.stringify(req.body.bodyPart) // Convert array to JSON string so that it can be inputted to the database
+    // ];
+
 });
 
 
@@ -84,36 +105,48 @@ app.post('/api/Sign-Up', (req, res) => {
 
 // This is an api which checks whether the login credentials entered are the same as what is in the database
 app.post('/api/Sign-in', (req, res) => {
-    const sql = "SELECT * FROM Patients WHERE Email = ? and Password = ?";
-    db.query(sql, [req.body.email, req.body.password, req.body.password, req.body.preferredName, req.body.firstName, req.body.lastName, 
+    const sql = "SELECT * FROM Patients WHERE Email = ? "; //and Password = ?
+    db.query(sql, [req.body.email, req.body.preferredName, req.body.firstName, req.body.lastName, //req.body.password
         req.body.pastMedHistory, req.body.painScore, req.body.bodyPart, req.body.contactNumber], (err, result) => {
         if(err) return res.json({Message: "Error inside server"});
 
         // This checks if a record exists. If it does login = true, if not login = false
         if(result.length > 0) {
 
-            
-            req.session.email = result[0].Email; // This assigns an email to a session
-            req.session.preferredName  = result[0].PreferredName; // This assigns a preferred name to a session
-            req.session.firstName  = result[0].FirstName; // This assigns a first name to a session
-            req.session.lastName  = result[0].LastName; // This assigns a last name to a session
-            req.session.pastMedHistory  = result[0].PastMedHistory; // This contains the PMH details of a session
-            req.session.painScore = result[0].PainScore; // This assigns a painscore to the session
-            req.session.contactNumber = result[0].PhoneNo;
-            req.session.bodyPart = result[0].SymptomArea;
-            
-            const email = result[0].email;
-            const token = jwt.sign({email}, "our-jsonwebtoken-secret-key", {expiresIn: '1d'} )
-            res.cookie('token', token);
+            bcrypt.compare(req.body.password.toString(), result[0].Password, (err, response) => {
+                if(err) {
+                    return res.json("Error");
+                }
+                if(response) {
+                    req.session.email = result[0].Email; // This assigns an email to a session
+                    req.session.preferredName  = result[0].PreferredName; // This assigns a preferred name to a session
+                    req.session.firstName  = result[0].FirstName; // This assigns a first name to a session
+                    req.session.lastName  = result[0].LastName; // This assigns a last name to a session
+                    req.session.pastMedHistory  = result[0].PastMedHistory; // This contains the PMH details of a session
+                    req.session.painScore = result[0].PainScore; // This assigns a painscore to the session
+                    req.session.contactNumber = result[0].PhoneNo;
+                    req.session.bodyPart = result[0].SymptomArea;
+                    
+                    const email = result[0].email;
+                    const token = jwt.sign({email}, "our-jsonwebtoken-secret-key", {expiresIn: '1d'} )
+                    res.cookie('token', token);
 
 
-            console.log('The user logged in is:', req.session.email);
-            
-            return res.json({
-                Login: true, 
-                email: req.session.email,
-                
+                    console.log('The user logged in is:', req.session.email);
+                    
+                    return res.json({
+                        Login: true, 
+                        email: req.session.email,
+                        result
+                    
+                })
+
+                }
+                    return res.json({
+                        Login: false});
+                       
             })
+            
         } else {
             return res.json({
                 Login: false
