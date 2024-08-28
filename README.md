@@ -24,7 +24,7 @@ Navbar:
 https://www.youtube.com/watch?v=17l6AOc8s10
 
 
-pulling from the database:
+Pulling from the database:
 
 
 https://www.youtube.com/watch?v=b4H9EOKc910
@@ -33,6 +33,10 @@ https://www.youtube.com/watch?v=b4H9EOKc910
 CRUD:
 
 https://www.youtube.com/watch?v=y5NvOade3sk
+
+Password Hashing
+
+https://www.youtube.com/watch?v=3l_CpD-IaJE
 
 
 # Libraries
@@ -50,13 +54,13 @@ For the back end:
 - bodyParser
 - cookieParser
 - jwt
+- bcrypt
 
 
 For the form creation, I used: https://www.youtube.com/watch?v=dldjCPa9ZW4 as inspiration. This allowed for the use of further libraries. Including:
 - Zod
 - React Hook Form
 - Hook Form Resolver
-
 
 
 
