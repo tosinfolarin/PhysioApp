@@ -101,23 +101,23 @@ const Details = () => {
             
   
             
-            <label>Preferred  Name: {name} </label>
-            <input type="text" {...register("preferredName")} />
+            <label>Preferred  Name: {name} <button type="button">Edit</button> </label> 
+            <input type="text"  {...register("preferredName" ) } /> 
             {errors.preferredName && <span className="errorMessage">{errors.preferredName.message}</span>}
   
-            <label>Contact Number: {contactNumber} </label>
+            <label>Contact Number: {contactNumber} <button type="button">Change Contact Number</button> </label>
             <input type="text" {...register("contactNumber")} />
             {errors.contactNumber && <span className="errorMessage">{errors.contactNumber.message}</span>}
   
-            <label>Email: {email} </label>
+            <label>Email: {email} <button type="button">Edit</button> </label>
             <input type="email" {...register("email")} />
             {errors.email && <span className="errorMessage">{errors.email.message}</span>}
   
-            <label>Password:</label>
+            <label>Password: <button type="button">Change Password</button> </label>
             <input type="password" {...register("password")} />
             {errors.password && <span className="errorMessage">{errors.password.message}</span>}
   
-            <label>Symptoms Area: {bodyPart} </label>
+            <label>Symptoms Area: {bodyPart}  <button type="button">Choose new area(s)</button> </label>
             <div>
               <input type="checkbox" id="neck" value="neck" {...register("bodyPart")} />
               <label htmlFor="neck">Neck</label>

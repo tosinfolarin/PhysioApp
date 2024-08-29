@@ -113,7 +113,7 @@ app.post('/api/Sign-in', (req, res) => {
         // This checks if a record exists. If it does login = true, if not login = false
         if(result.length > 0) {
 
-            bcrypt.compare(req.body.password.toString(), result[0].Password, (err, response) => {
+            bcrypt.compare(req.body.password.toString(), result[0].Password, (err, response) => { // This compares the password in the database after converting to string
                 if(err) {
                     return res.json("Error");
                 }
@@ -138,15 +138,11 @@ app.post('/api/Sign-in', (req, res) => {
                         Login: true, 
                         email: req.session.email,
                         result
-                    
                 })
-
                 }
                     return res.json({
-                        Login: false});
-                       
+                        Login: false});                 
             })
-            
         } else {
             return res.json({
                 Login: false
