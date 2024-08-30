@@ -729,10 +729,6 @@ nav .menu span {
 
 
 
-
-
-
-
 .myDetailsButton {
 
   padding: 8px;
@@ -750,7 +746,69 @@ nav .menu span {
 }
 
 
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    padding: 10px;
+  }
 
+  .profile-sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .user-diary {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .profile-image img {
+    max-width: 150px;
+  }
+
+  .profile-username,
+  .LogOutButton,
+  .myDetailsButton,
+  .diary-submit {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* For smartphones */
+@media (max-width: 480px) {
+  .profile-container {
+    padding: 5px;
+  }
+
+  .profile-header {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+
+  .profile-image img {
+    max-width: 100%;
+    
+  }
+
+  .profile-username,
+  .LogOutButton,
+  .myDetailsButton,
+  .diary-submit {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .profile-pmh {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .user-diary {
+    font-size: 0.9rem;
+  }
+}
 
 
 
