@@ -5,7 +5,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcrypt")
+const bcryptjs = require("bcryptjs")
 const salt = 10;
 // Create express app
 const app = express();
@@ -57,7 +57,7 @@ app.post('/api/Sign-Up', (req, res) => {
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     const password = req.body.password;
-    bcrypt.hash(password.toString(), salt, (err, hash) => {
+    bcryptjs.hash(password.toString(), salt, (err, hash) => {
         if(err) {
             console.log(err);
         }
@@ -113,7 +113,7 @@ app.post('/api/Sign-in', (req, res) => {
         // This checks if a record exists. If it does login = true, if not login = false
         if(result.length > 0) {
 
-            bcrypt.compare(req.body.password.toString(), result[0].Password, (err, response) => { // This compares the password in the database after converting to string
+            bcryptjs.compare(req.body.password.toString(), result[0].Password, (err, response) => { // This compares the password in the database after converting to string
                 if(err) {
                     return res.json("Error");
                 }
