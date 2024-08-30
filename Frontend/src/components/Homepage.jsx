@@ -1,6 +1,6 @@
 import MyInjury from "./myInjuryButton";
 import RedflagWarning from "./RedflagWarning";
-import RedFlagInformation from "./RedFlagInfo";
+import RedFlagInformation from "./RedFlagInformation";
 import RedFlags from "./RedFlagsButton";
 import ScrollAreaHorizontal from "./Scrollbar";
 import FAQinfo from "./FAQInfo";
