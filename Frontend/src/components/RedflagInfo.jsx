@@ -1,4 +1,4 @@
-const RedFlagInfo = () => {
+const RedFlagInformation = () => {
   return (
     <div className="red-flag-info-container">
       <h2>
@@ -12,4 +12,4 @@ const RedFlagInfo = () => {
   );
 }
 
-export default RedFlagInfo;
+export default RedFlagInformation;

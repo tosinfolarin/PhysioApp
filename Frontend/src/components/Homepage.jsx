@@ -1,6 +1,6 @@
 import MyInjury from "./myInjuryButton";
 import RedflagWarning from "./RedflagWarning";
-import RedFlagInfo from "./RedFlagInfo";
+import RedFlagInformation from "./RedFlagInfo";
 import RedFlags from "./RedFlagsButton";
 import ScrollAreaHorizontal from "./Scrollbar";
 import FAQinfo from "./FAQInfo";
@@ -13,7 +13,7 @@ const Home = () => {
         <div>
         <MyInjury/>
         <RedflagWarning/>
-        <RedFlagInfo/>
+        <RedFlagInformation/>
         <RedFlags/>
 
         <h1 className="redflag-prompt">Scroll For Red Flag Information</h1>
