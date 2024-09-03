@@ -350,11 +350,11 @@ nav .menu span {
 
   .flex-fcontainer {
     flex-direction: column; /* Ensure content stacks vertically */
-    padding: 0; /* Remove additional padding */
+    padding: 0; /* Removes additional padding */
   }
 
   .flex-fchild {
-    margin-right: 0; /* Ensure no horizontal margin on small screens */
+    margin-right: 0; /* Ensures no horizontal margin on small screens */
     margin-bottom: 10px; /* Reduce bottom margin between items */
   }
 
@@ -410,9 +410,9 @@ nav .menu span {
   }
   
   .injury-text-container {
-    display: flex; /* Enable flexbox */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
     text-align: center;
     width: 280px;
     height: 280px;
@@ -423,7 +423,7 @@ nav .menu span {
   }
   
   .injury-text {
-    font-size: 1.25rem; /* Example font size, adjust as needed */
+    font-size: 1.25rem; 
   }
   
   @media only screen and (max-width: 768px) {
@@ -434,7 +434,7 @@ nav .menu span {
   
     .injuries {
       display: flex;
-      flex-direction: column; /* Stack items vertically */
+      flex-direction: column; /* Stacks items vertically */
       align-items: center; /* Center items horizontally */
       gap: 20px; /* Space between items */
     }
@@ -452,7 +452,7 @@ nav .menu span {
   
     .injury-text-container {
       width: 100%;
-      height: auto; /* Adjust based on content */
+      height: auto; 
     }
 
     .help-tag {
