@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_BASE_URL;
+
 const SignUp = () => {
   const [submitted, setSubmitted] = useState(false);
   const navigate = useNavigate();
@@ -53,7 +55,8 @@ const SignUp = () => {
     console.log(formData);
     setSubmitted(true);
 // sends information to the server taking the data from the formData dataset
-      axios.post('http://localhost:8080/api/Sign-Up', data )
+      // axios.post('http://localhost:8080/api/Sign-Up', data )
+      axios.post(`${apiUrl}/api/Sign-Up`, data)
       // Then stores the results and redirects the user to the sign in page
       .then(res => 
         {

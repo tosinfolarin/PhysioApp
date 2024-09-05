@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_BASE_URL;
 axios.defaults.withCredentials = true;
 
 const Textbox = () => {
@@ -15,7 +16,8 @@ const Textbox = () => {
   }, []);
 
   const getNotes = () => {
-    axios.get('http://localhost:8080/api/get/Notes')
+    // axios.get('http://localhost:8080/api/get/Notes')
+    axios.get(`${apiUrl}/api/get/Notes`)
       .then(res => {
         console.log('Response data:', res.data); // For debugging, this shows the information is going to the console
         if (res.data.Status === "Success") {
@@ -55,7 +57,8 @@ const Textbox = () => {
       // The NoteID is assigned to the edited note
       const updatedEntry = { NoteID: entries[currentIndex].NoteID, newNoteContent: diaryEntry };
   
-      axios.put('http://localhost:8080/api/edit/Note', updatedEntry)
+      // axios.put('http://localhost:8080/api/edit/Note', updatedEntry)
+      axios.put(`${apiUrl}/api/edit/Note`, updatedEntry)
         .then(res => {
           if (res.data.Status === "Success") {
             const updatedEntries = [...entries];
@@ -74,7 +77,8 @@ const Textbox = () => {
     } else {
       const newEntry = { Note: diaryEntry, Timestamp };
       console.log(newEntry)
-      axios.post('http://localhost:8080/api/post/Note', newEntry)
+      // axios.post('http://localhost:8080/api/post/Note', newEntry)
+      axios.post(`${apiUrl}/api/post/Note`, newEntry)
         .then(res => {
           if (res.data.Status === "Success") {
             setEntries([...entries, newEntry]); // Update the local state with the new entry
@@ -102,7 +106,8 @@ const Textbox = () => {
 
 
   const handleDelete = (noteID, index) => {
-    axios.delete('http://localhost:8080/api/delete/Note', { data: { NoteID: noteID } })
+    // axios.delete('http://localhost:8080/api/delete/Note', { data: { NoteID: noteID } })
+    axios.delete(`${apiUrl}/api/delete/Note`, { data: { NoteID: noteID } })
       .then(res => {
         if (res.data.Status === "Success") {
           // Update the frontend after successful deletion from the database
