@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_BASE_URL;
 axios.defaults.withCredentials = true;
 
 const SignIn = ({setIsLoggedIn}) => {
@@ -29,7 +30,7 @@ const SignIn = ({setIsLoggedIn}) => {
     setSubmitted(true);
     
     
-    axios.post('http://localhost:8080/api/Sign-in', data)
+    axios.post(`${apiUrl}/api/Sign-in`, data)
     .then(res => {
       if(res.data.Login) {
         navigate("/MyProfile");

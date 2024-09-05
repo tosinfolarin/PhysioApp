@@ -6,13 +6,16 @@ const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken")
 const bcryptjs = require("bcryptjs")
+const dotenv = require("dotenv")
 const salt = 10;
 // Create express app
+dotenv.config()
 const app = express();
 
 
+
 app.use(cors({
-    origin: ["http://localhost:5173", "https://physioapp-frontend.onrender.com/"],
+    origin: ["http://localhost:5173", "https://physioapp-frontend.onrender.com"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
 })); 
