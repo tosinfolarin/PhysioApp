@@ -16,7 +16,10 @@ const app = express();
 
 app.use(cors({
     origin: ["http://localhost:5173", "https://physioapp-frontend.onrender.com"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
+    allowedHeaders:
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    // methods: ["POST", "GET", "PUT", "DELETE",],
     credentials: true
 })); 
 app.use(express.json());
