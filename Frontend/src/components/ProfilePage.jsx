@@ -37,7 +37,7 @@ const Profile = () => {
   const navigate = useNavigate()
   useEffect(()=> {
     
-    axios.post(`${apiUrl}/api/MyProfile`)
+    axios.get(`${apiUrl}/api/MyProfile`) 
     .then(res => { 
       if(res.data.valid){
         setAuth(true);
