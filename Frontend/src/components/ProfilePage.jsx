@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Textbox from './Textbox';
 
-
+const apiUrl = import.meta.env.VITE_BASE_URL;
 axios.defaults.withCredentials = true;
 
 const Profile = () => {
@@ -37,7 +37,7 @@ const Profile = () => {
   const navigate = useNavigate()
   useEffect(()=> {
     
-    axios.get('http://localhost:8080/api/MyProfile')
+    axios.post(`${apiUrl}/api/MyProfile`)
     .then(res => { 
       if(res.data.valid){
         setAuth(true);
