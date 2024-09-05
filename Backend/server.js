@@ -6,10 +6,8 @@ const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
 const jwt = require("jsonwebtoken")
 const bcryptjs = require("bcryptjs")
-const dotenv = require("dotenv")
 const salt = 10;
 // Create express app
-dotenv.config()
 const app = express();
 
 
