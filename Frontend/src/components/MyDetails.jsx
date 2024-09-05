@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom"
-
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 
 const Details = () => {
@@ -68,7 +68,8 @@ const Details = () => {
 
     useEffect(()=> {
     
-      axios.get('http://localhost:8080/api/MyProfile')
+      // axios.get('http://localhost:8080/api/MyProfile')
+      axios.get(`${apiUrl}/api/MyProfile`)
       .then(res => { 
         if(res.data.valid){
           setAuth(true);

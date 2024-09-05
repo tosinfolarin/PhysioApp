@@ -65,6 +65,7 @@ import Test from './components/Test';
 import Navbar from './components/Navbar';
 import ProfileNav from './components/ProfileNav';
 
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
 function App() {
 
@@ -73,7 +74,8 @@ function App() {
 
   useEffect(() => {
     // Check if the user is logged in
-    axios.get('http://localhost:8080/api/MyProfile')
+    // axios.get('http://localhost:8080/api/MyProfile')
+    axios.get(`${apiUrl}/api/MyProfile`)
       .then(res => {
         setIsLoggedIn(res.data.valid);
       })
