@@ -14,31 +14,6 @@ Welcome to the WaitLess Physio App, a physiotherapy application which provides u
 - Follow the link: http://localhost:5173/ to the browser to view the website
 
 
-# Resources Used
-
-The resources on this website stemmed from different places.
-
-
-Navbar:
-
-https://www.youtube.com/watch?v=17l6AOc8s10
-
-
-Pulling from the database:
-
-
-https://www.youtube.com/watch?v=b4H9EOKc910
-
-
-CRUD:
-
-https://www.youtube.com/watch?v=y5NvOade3sk
-
-Password Hashing
-
-https://www.youtube.com/watch?v=3l_CpD-IaJE
-
-
 # Libraries
 
 
@@ -70,11 +45,13 @@ https://physioapp-frontend.onrender.com/
 
 
 
+
 # Creator Information
 
 
 Name: Theodore Osinfolarin
 - Github: https://github.com/tosinfolarin
 - Linked In: www.linkedin.com/in/theo-osinfolarin-ldn
+
 
 
